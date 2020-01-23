@@ -64,11 +64,6 @@
         },
         {
             "header": "Account",
-            "status": "Disabled",
-            "status_state": "2"
-        },
-        {
-            "header": "Account",
             "status": "Active",
             "status_state": "1"
         },
@@ -76,16 +71,6 @@
             "header": "Account",
             "status": "Active",
             "status_state": "1"
-        },
-        {
-            "header": "Account",
-            "status": "Active",
-            "status_state": "1"
-        },
-        {
-            "header": "Account",
-            "status": "Disabled",
-            "status_state": "2"
         }
     ]
 }

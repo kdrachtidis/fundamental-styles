@@ -1,41 +1,46 @@
 {
     "title": "Resources",
+    "description": "Description",
     "items": [
         {
             "header": "Source",
-            "description": "Description"
+            "description": "Description",
+            "icon": "source-code"
         },
         {
             "header": "Source",
-            "description": "Description"
+            "description": "Description",
+            "icon": "source-code"
         },
         {
             "header": "Source",
-            "description": "Description"
+            "description": "Description",
+            "icon": "source-code"
         },
         {
             "header": "Source",
-            "description": "Description"
+            "description": "Description",
+            "icon": "source-code"
         },
         {
             "header": "Source",
-            "description": "Description"
+            "description": "Description",
+            "icon": "source-code"
         },
         {
             "header": "Source",
-            "description": "Description"
+            "description": "Description",
+            "icon": "source-code"
         },
         {
             "header": "Source",
-            "description": "Description"
+            "description": "Description",
+            "icon": "source-code"
         },
         {
             "header": "Source",
-            "description": "Description"
-        },
-        {
-            "header": "Source",
-            "description": "Description"
+            "description": "Description",
+            "icon": "source-code"
         }
     ]
 }

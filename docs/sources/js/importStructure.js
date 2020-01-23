@@ -1,4 +1,5 @@
 function getStructure() {
+    $('#proto-shellBar').load('sources/html/shellBar.html');
     $('#proto-leftSidebar').load('sources/html/leftSidebar.html');
     $('#proto-leftContainer').load('sources/html/leftContainer.html');
     $('#proto-rightContainer').load('sources/html/rightContainer.html');

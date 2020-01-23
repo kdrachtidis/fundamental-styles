@@ -22,20 +22,11 @@
                 },
                 {
                     "header": "Tenant"
-                },
-                {
-                    "header": "Tenant"
                 }
             ]
         }, {
             "name": "US",
             "items": [
-                {
-                    "header": "Tenant"
-                },
-                {
-                    "header": "Tenant"
-                },
                 {
                     "header": "Tenant"
                 },

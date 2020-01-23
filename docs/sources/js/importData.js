@@ -35,11 +35,28 @@ function leftContainerJSON(data) {
 }
 
 function rightContainerJSON(data) {
-    $("#proto-right-container-title").append(data.title);
-    $("#proto-right-container-description").append(data.items.length + " items loaded.");
+    $("#proto-right-container-title").append(data.title + ' <span class="fd-counter" aria-label="Unread count">' + data.items.length + '</span>');
+    $("#proto-right-container-description").append(data.description);
 
     $(data.items).each(function () {
-        $('<div class="fd-notification"><div class="fd-notification__header"><div class="fd-notification__title">' + this.title + '</div><button class="fd-button--light sap-icon--decline fd-notification__close"></button></div><div class="fd-notification__body"><div class="fd-notification__content"><div class="fd-notification__text"><div class="fd-notification__description">' + this.description + '</div><div class="fd-notification__metadata">' + this.timestamp + '</div></div></div><div class="fd-notification__footer"><button class="fd-button--light">More Info</button><div class="fd-notification__actions"><button class="fd-button--positive">Approve</button><button class="fd-button--negative">Reject</button></div></div></div></div>').appendTo("#proto-right-container-list");
+        var htmlItem;
+        htmlItem = '<div class="fd-notification fd-notification--information fd-notification--m">';
+        htmlItem += '   <div class="fd-notification__header">';
+        htmlItem += '       <div class="fd-notification__indicator--information"></div>';
+        htmlItem += '       <div class="fd-notification__title">' + this.title + '</div>';
+        htmlItem += '       <button class="fd-button--light sap-icon--decline fd-notification__close"></button>';
+        htmlItem += '   </div>';
+        htmlItem += '   <div class="fd-notification__body">';
+        htmlItem += '       <div class="fd-notification__content">';
+        htmlItem += '           <div class="fd-notification__text">';
+        htmlItem += '               <div class="fd-notification__description">' + this.description + '</div>';
+        htmlItem += '               <div class="fd-notification__metadata">' + this.user + ' | ' + this.date + ' ' + this.timestamp + '</div>';
+        htmlItem += '           </div>';
+        htmlItem += '       </div>';
+        htmlItem += '   </div>';
+        htmlItem += '</div>';
+
+        $(htmlItem).appendTo("#proto-right-container-list");
     });
 }
 
@@ -48,7 +65,33 @@ function rightSidebarJSON(data) {
     $("#proto-right-sidebar-description").append(data.items.length + " items loaded.");
 
     $(data.items).each(function () {
-        $('<div class="fd-product-tile"><div class="fd-product-tile__content"><h3 class="fd-product-tile__title">' + this.header + '</h3><p class="fd-product-tile__text">' + this.description + '</p></div></div>').appendTo("#proto-right-sidebar-list");
+        var htmlItem;
+        htmlItem = '<div class="fd-tile">';
+        htmlItem += '   <div class="fd-tile__media">';
+        htmlItem += '       <span class="fd-identifier fd-identifier--m sap-icon--' + this.icon + ' fd-identifier--transparent"></span>';
+        htmlItem += '   </div>';
+        htmlItem += '   <div class="fd-tile__content">';
+        htmlItem += '       <h3 class="fd-tile__title">' + this.header + '</h3>';
+        htmlItem += '       <p class="fd-tile__text">' + this.description + '</p>';
+        htmlItem += '   </div>';
+        htmlItem += '   <div class="fd-tile__actions">';
+        htmlItem += '       <div class="fd-popover fd-popover--right">';
+        htmlItem += '           <div class="fd-popover__control">';
+        htmlItem += '               <button class="fd-button--light sap-icon--overflow" aria-label="More" aria-expanded="false" aria-controls="WQIDD179" aria-haspopup="true"></button>';
+        htmlItem += '           </div>';
+        htmlItem += '           <div class="fd-popover__body fd-popover__body--right fd-popover__body--no-arrow" aria-hidden="true" id="WQIDD179">';
+        htmlItem += '               <nav class="fd-menu" id="">';
+        htmlItem += '                   <ul class="fd-menu__list">';
+        htmlItem += '                       <li><a href="#" class="fd-menu__item">Option 1</a></li>';
+        htmlItem += '                       <li><a href="#" class="fd-menu__item">Option 2</a></li>';
+        htmlItem += '                       <li><a href="#" class="fd-menu__item">Option 3</a></li>';
+        htmlItem += '                   </ul>';
+        htmlItem += '               </nav>';
+        htmlItem += '           </div>';
+        htmlItem += '       </div>';
+        htmlItem += '   </div>';
+        htmlItem += '</div>';
+        $(htmlItem).appendTo("#proto-right-sidebar-list");
     });
 }
 
