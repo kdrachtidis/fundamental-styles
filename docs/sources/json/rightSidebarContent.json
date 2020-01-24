@@ -20,7 +20,7 @@
         {
             "header": "Source",
             "description": "Description",
-            "icon": "source-code"
+            "icon": "along-stacked-chart"
         },
         {
             "header": "Source",
@@ -35,12 +35,12 @@
         {
             "header": "Source",
             "description": "Description",
-            "icon": "source-code"
+            "icon": "internet-browser"
         },
         {
             "header": "Source",
             "description": "Description",
-            "icon": "source-code"
+            "icon": "database"
         }
     ]
 }
