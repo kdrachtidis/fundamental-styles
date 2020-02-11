@@ -1,0 +1,61 @@
+function getData() {
+    $.ajax({
+        dataType: "json",
+        url: "./src/json/leftSidebar.min.json",
+        success: leftSidebarJSON,
+        error: function(){
+            console.log('No left sidebar JSON found.');
+        },
+        complete: function(){
+            console.log('Left sidebar loaded.');
+        }
+    });
+
+    $.ajax({
+        dataType: "json",
+        url: "./src/json/rightSidebar.min.json",
+        success: rightSidebarJSON,
+        error: function(){
+            console.log('No right sidebar JSON found.');
+        },
+        complete: function(){
+            console.log('Right sidebar loaded.');
+        }
+    });
+
+    $.ajax({
+        dataType: "json",
+        url: "./src/json/leftContainer.min.json",
+        success: leftContainerJSON,
+        error: function(){
+            console.log('No left container JSON found.');
+        },
+        complete: function(){
+            console.log('Left container loaded.');
+        }
+    });
+
+    $.ajax({
+        dataType: "json",
+        url: "./src/json/rightContainer.min.json",
+        success: rightContainerJSON,
+        error: function(){
+            console.log('No right container JSON found.');
+        },
+        complete: function(){
+            console.log('Right container loaded.');
+        }
+    });
+
+    $.ajax({
+        dataType: "json",
+        url: "./src/json/MainContainer.min.json",
+        success: mainContainerJSON,
+        error: function(){
+            console.log('No main container JSON found.');
+        },
+        complete: function(){
+            console.log('Main container loaded.');
+        }
+    });
+}
