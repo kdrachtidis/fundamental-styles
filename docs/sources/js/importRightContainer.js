@@ -1,10 +1,15 @@
 function rightContainerJSON(data) {
-    $("#ux-right-container-title").append(data.title + ' <span class="fd-counter" aria-label="Unread count">' + data.items.length + '</span>');
-    $("#ux-right-container-description").append(data.description);
+    //Panel Head
+    var htmlHead;
+    htmlHead = '<h3 class="fd-panel__title">' + data.title + ' <span class="fd-counter" aria-label="Unread count">' + data.items.length + '</span></h3>';
+    htmlHead += '<p class="fd-panel__description">' + data.description + '</p>';
 
+    $(htmlHead).appendTo('#ux-right-container .fd-panel__head');
+
+    //Panel Body - list
     $(data.items).each(function () {
         var htmlItem;
-        
+
         htmlItem = '<div class="fd-notification fd-notification--' + this.state + ' fd-notification--m">';
         htmlItem += '   <div class="fd-notification__header">';
         htmlItem += '       <div class="fd-notification__indicator--' + this.state + '"></div>';
@@ -21,6 +26,6 @@ function rightContainerJSON(data) {
         htmlItem += '   </div>';
         htmlItem += '</div>';
 
-        $(htmlItem).appendTo("#ux-right-container-list");
+        $(htmlItem).appendTo("#ux-right-container .fd-panel__body");
     });
 }
