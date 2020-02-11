@@ -1,7 +1,12 @@
 function rightSidebarJSON(data) {
-    $("#ux-right-sidebar-title").append(data.title);
-    $("#ux-right-sidebar-description").append(data.items.length + " items loaded.");
+    //Panel Head
+    var htmlHead;
+    htmlHead = '<h3 class="fd-panel__title">' + data.title + '</h3>';
+    htmlHead += '<p class="fd-panel__description">' + data.description + '</p>';
 
+    $(htmlHead).appendTo('#ux-right-sidebar .fd-panel__head');
+
+    //Panel Body - list
     $(data.items).each(function () {
         var htmlItem;
 
@@ -31,6 +36,6 @@ function rightSidebarJSON(data) {
         htmlItem += '   </div>';
         htmlItem += '</div>';
         
-        $(htmlItem).appendTo("#ux-right-sidebar-list");
+        $(htmlItem).appendTo("#ux-right-sidebar .fd-panel__body");
     });
 }
