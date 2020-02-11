@@ -5,34 +5,23 @@ module.exports = function (grunt) {
 
         watch: {
             scripts: {
-                files: ['api/js/*.js', 'docs/sources/**/*.js', 'docs/sources/**/*.json'],
-                tasks: ['jshint', 'minjson','uglify', 'copy']
+                files: ['*.js', 'docs/sources/**/*.html', 'docs/sources/**/*.js', 'docs/sources/**/*.json'],
+                tasks: ['jshint', 'minjson','uglify', 'htmllint']
             }
         },
+        htmllint: {
+            all: ['docs/sources/html/*.html']
+        },
         jshint: {
-            files: ['Gruntfile.js', 'api/**/*.js', 'docs/sources/**/*.js', 'docs/sources/**/*.json'],
+            files: ['Gruntfile.js', 'package.json', 'docs/sources/**/*.js', 'docs/sources/**/*.json'],
             options: {
                 browser: true
             }
         },
         uglify: {
-            buildAPI: {
-                src: ['api/js/*.js'],
-                dest: 'api.min.js'
-            },
             buildScript: {
                 src: ['docs/sources/js/*.js'],
                 dest: 'docs/script.min.js'
-            }
-        },
-        copy: {
-            main: {
-                files: [
-                    {
-                        src: ['api.min.js'],
-                        dest: 'docs/api.min.js'
-                    }
-                ]
             }
         },
         minjson: {
@@ -42,12 +31,12 @@ module.exports = function (grunt) {
         }
     });
 
+    grunt.loadNpmTasks('grunt-html');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-minjson');
 
-    grunt.registerTask('default', ['jshint', 'minjson', 'uglify', 'copy', 'watch']);
+    grunt.registerTask('default', ['jshint', 'minjson', 'uglify', 'watch']);
 
 };
