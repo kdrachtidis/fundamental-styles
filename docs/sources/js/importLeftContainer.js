@@ -1,5 +1,5 @@
 function leftContainerJSON(data) {
-     //Panel Head
+    //Panel Head
     var htmlHead;
     htmlHead = '<h3 class="fd-panel__title">' + data.title + '</h3>';
     htmlHead += '<p class="fd-panel__description">' + data.description + '</p>';
