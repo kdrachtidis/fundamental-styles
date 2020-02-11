@@ -1,48 +1,60 @@
-<!-- Panel -->
-<div class="fd-panel">
-    <div class="fd-panel__header">
+<!DOCTYPE html>
+<html lang="en">
 
-        <div class="fd-panel__head fd-has-display-block">
-            <h3 class="fd-panel__title" id="ux-left-sidebar-title">
-            </h3>
-            <p class="fd-panel__description" id="ux-left-sidebar-description">
-            </p>
-        </div>
+<head>
+    <title>UX prototype for exploring patterns and interactions!</title>
 
-        <div class="fd-panel__actions">
-            <button class="fd-button--compact">Hide</button>
+    <meta charset="UTF-8" />
+</head>
+
+<body>
+
+    <div class="fd-panel" id="ux-left-sidebar">
+        <div class="fd-panel__header">
+            <div class="fd-panel__head fd-has-display-block"></div>
+            <div class="fd-panel__actions">
+                <button class="fd-button--compact">Hide</button>
+            </div>
         </div>
-    </div>
-    <div class="fd-panel__filters fd-has-display-block" id="">
-        <div class="documentation-site-popover-container">
-            <div class="fd-popover">
-                <div class="fd-popover__control">
-                    <div aria-label="Image label" aria-controls="F4GcX348bc" aria-expanded="false" aria-haspopup="true">
-                        <div class="fd-input-group">
-                            <input type="text" class="fd-input fd-input-group__input" id="" value=""
-                                placeholder="Search Tenants">
-                            <span class="fd-input-group__addon fd-input-group__addon--button">
-                                <button class="fd-input-group__button fd-button--light sap-icon--search"></button>
-                            </span>
+        <div class="fd-panel__filters fd-has-display-block">
+
+            <!-- Panel Filters -->
+            <div class="documentation-site-popover-container">
+                <div class="fd-popover">
+                    <div class="fd-popover__control">
+                        <div>
+                            <div class="fd-input-group">
+                                <input type="text" class="fd-input fd-input-group__input" placeholder="Search Tenants">
+                                <span class="fd-input-group__addon fd-input-group__addon--button">
+                                    <button class="fd-input-group__button fd-button--light sap-icon--search"></button>
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+        </div>
+        <div class="fd-panel__body fd-has-padding-none">
+            
+            <!-- Panel Body -->
+            <ul class="fd-list">
+                <li class="fd-list__group-header" id="ux-tenant-group-0"></li>
+                <li class="fd-list__group-header" id="ux-tenant-group-1"></li>
+                <li class="fd-list__footer">
+                    <span id="ux-left-sidebar-count"></span>&nbsp;items loaded succesfully.
+                </li>
+            </ul>
+
+        </div>
+        <div class="fd-panel__footer">
+
+             <!-- Panel Footer -->
+            <a href="#" class="fd-link" tabindex="0">Documentation</a>
+
         </div>
     </div>
-    <div class="fd-panel__body fd-has-padding-none">
-        <ul class="fd-list">
-            <li class="fd-list__group-header" id="ux-tenant-group-0"></li>
-            <div id="ux-left-sidebar-list-group-0"></div>
-            <li class="fd-list__group-header" id="ux-tenant-group-1"></li>
-            <div id="ux-left-sidebar-list-group-1"></div>
-            <li class="fd-list__footer">
-                <span id="ux-left-sidebar-count"></span>&nbsp;items loaded succesfully.
-            </li>
-        </ul>
-    </div>
-    <div class="fd-panel__footer">
-        <a href="#" class="fd-link" tabindex="0">Documentation</a>
-    </div>
-</div>
-<!-- End Panel -->
+
+</body>
+
+</html>

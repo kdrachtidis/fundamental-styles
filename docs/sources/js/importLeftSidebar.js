@@ -1,32 +1,38 @@
 function leftSidebarJSON(data) {
-    var itemsCount = data.regions[0].items.length + data.regions[1].items.length;
+    //Panel Head
+    var htmlHead;
+    htmlHead = '<h3 class="fd-panel__title">' + data.title + '</h3>';
+    htmlHead += '<p class="fd-panel__description">' + data.description + '</p>';
 
-    $("#ux-left-sidebar-title").append(data.title);
-    $("#ux-left-sidebar-description").append(data.description);
-    $("#ux-left-sidebar-count, #ux-left-sidebar-dropdown-label").append(itemsCount);
+    $(htmlHead).appendTo('#ux-left-sidebar .fd-panel__head');
 
+    //Panel Body - Group headers
     $('#ux-tenant-group-0').append(data.regions[0].name);
     $('#ux-tenant-group-1').append(data.regions[1].name);
 
+    //Panel Body - list
     $(data.regions[0].items).each(function () {
         var htmlItem;
 
         htmlItem = '<li class="fd-list__item">';
         htmlItem += '    <span class="fd-list__title">' + this.header + '</span>';
         htmlItem += '</li>';
-        
-        $(htmlItem).appendTo("#ux-left-sidebar-list-group-0");
-        //$('<li class="fd-list__item" role="option"><span class="fd-list__title">' + this.header + '</span></li>').appendTo("#ux-left-sidebar-dropdown-list");
+
+        $(htmlItem).insertAfter("#ux-tenant-group-0");
     });
 
     $(data.regions[1].items).each(function () {
         var htmlItem;
-        
+
         htmlItem = '<li class="fd-list__item">';
         htmlItem += '<span class="fd-list__title">' + this.header + '</span>';
         htmlItem += '</li>';
-        
-        $(htmlItem).appendTo("#ux-left-sidebar-list-group-1");
-        //$('<li class="fd-list__item" role="option"><span class="fd-list__title">' + this.header + '</span></li>').appendTo("#ux-left-sidebar-dropdown-list");
+
+        $(htmlItem).insertAfter("#ux-tenant-group-1");
     });
+
+    //Panel footer
+    var itemsCount = data.regions[0].items.length + data.regions[1].items.length;
+
+    $("#ux-left-sidebar-count, #ux-left-sidebar-dropdown-label").append(itemsCount);
 }

@@ -1,17 +1,23 @@
 function leftContainerJSON(data) {
-    $("#ux-left-container-title").append(data.title);
-    $("#ux-left-container-description").append(data.description);
-    $("#ux-left-container-count, #ux-left-container-dropdown-label").append(data.items.length);
+     //Panel Head
+    var htmlHead;
+    htmlHead = '<h3 class="fd-panel__title">' + data.title + '</h3>';
+    htmlHead += '<p class="fd-panel__description">' + data.description + '</p>';
 
+    $(htmlHead).appendTo('#ux-left-container .fd-panel__head');
+
+    //Panel Body - list
     $(data.items).each(function () {
         var htmlItem;
-        
+
         htmlItem = '<li class="fd-list__item">';
         htmlItem += '   <span class="fd-list__title">' + this.header + '</span>';
         htmlItem += '   <span class="fd-list__secondary fd-has-color-status-' + this.status_state + '">' + this.status + '</span>';
         htmlItem += '</li>';
 
-        $(htmlItem).appendTo("#ux-left-container-list");
-        //$('<li class="fd-list__item" role="option"><span class="fd-list__title">' + this.header + '</span></li>').appendTo("#ux-left-container-dropdown-list");
+        $(htmlItem).insertAfter("#ux-left-container .fd-list__group-header");
     });
+
+    //Panel footer
+    $("#ux-left-container-count, #ux-left-container-dropdown-label").append(data.items.length);
 }
