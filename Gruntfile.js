@@ -5,14 +5,13 @@ module.exports = function (grunt) {
 
         watch: {
             scripts: {
-                files: ['*.js', 'sources/**/*.html', 'sources/**/*.js', 'sources/**/*.json'],
+                files: ['*.js', 'docs/*.html', 'sources/**/*.html', 'sources/**/*.js', 'sources/**/*.json'],
                 tasks: ['htmllint', 'htmlmin', 'jshint', 'uglify', 'minjson']
             }
         },
         htmlmin: {
             dist: {
                 files: {
-                    'docs/src/html/shell.min.html': 'sources/structure/shell.html',
                     'docs/src/html/shellBar.min.html': 'sources/structure/shellBar.html',
                     'docs/src/html/leftContainer.min.html': 'sources/structure/leftContainer.html',
                     'docs/src/html/leftSidebar.min.html': 'sources/structure/leftSidebar.html',
