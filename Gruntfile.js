@@ -12,12 +12,13 @@ module.exports = function (grunt) {
         htmlmin: {
             dist: {
                 files: {
+                    'docs/src/html/shell.min.html': 'sources/structure/shell.html',
+                    'docs/src/html/shellBar.min.html': 'sources/structure/shellBar.html',
                     'docs/src/html/leftContainer.min.html': 'sources/structure/leftContainer.html',
                     'docs/src/html/leftSidebar.min.html': 'sources/structure/leftSidebar.html',
                     'docs/src/html/mainContainer.min.html': 'sources/structure/mainContainer.html',
                     'docs/src/html/rightContainer.min.html': 'sources/structure/rightContainer.html',
-                    'docs/src/html/rightSidebar.min.html': 'sources/structure/rightSidebar.html',
-                    'docs/src/html/shellBar.min.html': 'sources/structure/shellBar.html'
+                    'docs/src/html/rightSidebar.min.html': 'sources/structure/rightSidebar.html'
                 }
             }
         },
@@ -39,11 +40,11 @@ module.exports = function (grunt) {
         minjson: {
             build: {
                 files: {
-                    'docs/data/leftSidebar.min.json': 'sources/content/leftSidebar.json',
-                    'docs/data/leftContainer.min.json': 'sources/content/leftContainer.json',
-                    'docs/data/mainContainer.min.json': 'sources/content/mainContainer.json',
-                    'docs/data/rightContainer.min.json': 'sources/content/rightContainer.json',
-                    'docs/data/rightSidebar.min.json': 'sources/content/rightSidebar.json'
+                    'docs/src/json/leftSidebar.min.json': 'sources/content/leftSidebar.json',
+                    'docs/src/json/leftContainer.min.json': 'sources/content/leftContainer.json',
+                    'docs/src/json/mainContainer.min.json': 'sources/content/mainContainer.json',
+                    'docs/src/json/rightContainer.min.json': 'sources/content/rightContainer.json',
+                    'docs/src/json/rightSidebar.min.json': 'sources/content/rightSidebar.json'
                 }
             }
         }

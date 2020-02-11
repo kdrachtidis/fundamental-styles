@@ -7,7 +7,7 @@ function getData() {
             console.log('No left sidebar JSON found.');
         },
         complete: function(){
-            console.log('Left sidebar loaded.');
+            console.log('Left sidebar JSON loaded.');
         }
     });
 
@@ -19,7 +19,7 @@ function getData() {
             console.log('No right sidebar JSON found.');
         },
         complete: function(){
-            console.log('Right sidebar loaded.');
+            console.log('Right sidebar JSON loaded.');
         }
     });
 
@@ -31,7 +31,7 @@ function getData() {
             console.log('No left container JSON found.');
         },
         complete: function(){
-            console.log('Left container loaded.');
+            console.log('Left container JSON loaded.');
         }
     });
 
@@ -43,7 +43,7 @@ function getData() {
             console.log('No right container JSON found.');
         },
         complete: function(){
-            console.log('Right container loaded.');
+            console.log('Right container JSON loaded.');
         }
     });
 
@@ -55,7 +55,7 @@ function getData() {
             console.log('No main container JSON found.');
         },
         complete: function(){
-            console.log('Main container loaded.');
+            console.log('Main container JSON loaded.');
         }
     });
 }
