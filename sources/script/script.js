@@ -1,3 +1,3 @@
 $(document).ready(function () {
-    $.when(getStructure()).done(function () { getData(); });
+    $.when(getStructure()).done(getData());
 });
