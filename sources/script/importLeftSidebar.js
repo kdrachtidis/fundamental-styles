@@ -24,7 +24,7 @@ function leftSidebarJSON(data) {
 
     //Panel Body - List footer
     var lastItem;
-    lastItem = '<li class="fd-list__footer">' + data.regions.length + ' groups of tenants successfully loaded.</li>';
+    lastItem = '<li class="fd-list__footer">' + data.regions.length + ' groups of ' + data.title + ' loaded.</li>';
 
     $('#leftSidebar .fd-list').append(lastItem);
 }

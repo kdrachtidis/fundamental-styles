@@ -18,7 +18,7 @@ function leftContainerJSON(data) {
 
     //Panel Body - List footer
     var lastItem;
-    lastItem = '<li class="fd-list__footer">' + data.items.length + ' tenants successfully loaded.</li>';
+    lastItem = '<li class="fd-list__footer">' + data.items.length + '&nbsp;' + data.title + ' loaded successfully.</li>';
 
     $('#leftContainer .fd-list').append(lastItem);
 }

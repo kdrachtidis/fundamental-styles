@@ -17,15 +17,16 @@ function mainContainerJSON(data) {
     $.each(data.objects, function (i) {
         //Panel Body - Tabs
         var tabItem;
-        var panelItem;
 
         tabItem = '<li class="fd-tabs__item">';
-        tabItem += '   <a class="fd-tabs__link link-' + this.id + '" aria-controls="tab' + this.id + '" href="#tab' + this.id + '" role="tab" onclick="clickTab' + this.id + '()">';
+        tabItem += '   <a class="fd-tabs__link link-' + this.id + '" aria-controls="tab' + this.id + '" aria-selected=' + this.expanded + ' href="#tab' + this.id + '" role="tab" onclick="clickTab' + this.id + '()">';
         tabItem += '       <p class="fd-tabs__count">' + this.items.length + '</p>';
         tabItem += '       <span class="fd-tabs__tag">' + this.name + '</span>';
         tabItem += '   </a>';
         tabItem += '</li>';
         $(tabItem).appendTo('.fd-tabs');
+
+        var panelItem;
 
         panelItem = '<div class="fd-tabs__panel" aria-expanded="' + this.expanded + '" id="tab' + this.id + '" role="tabpanel">';
         panelItem += '</div>';
@@ -49,11 +50,11 @@ function mainContainerJSON(data) {
         $.each(data.objects[i].labels, function () {
             var thItem;
 
-            thItem = '           <th class="fd-table__cell" scope="col"></th>';
-            thItem += '           <th class="fd-table__cell" scope="col">' + this.label2 + '</th>';
-            thItem += '           <th class="fd-table__cell" scope="col">' + this.label3 + '</th>';
-            thItem += '           <th class="fd-table__cell" scope="col">' + this.label4 + '</th>';
-            thItem += '           <th class="fd-table__cell" scope="col">' + this.label5 + '</th>';
+            thItem = '<th class="fd-table__cell" scope="col"></th>';
+            thItem += '<th class="fd-table__cell" scope="col">' + this.label2 + '</th>';
+            thItem += '<th class="fd-table__cell" scope="col">' + this.label3 + '</th>';
+            thItem += '<th class="fd-table__cell" scope="col">' + this.label4 + '</th>';
+            thItem += '<th class="fd-table__cell" scope="col">' + this.label5 + '</th>';
             $(thItem).appendTo('#mainContainer #tab' + data.objects[i].id + ' table thead tr');
         });
 

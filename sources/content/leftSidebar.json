@@ -25,46 +25,6 @@
                 {
                     "header": "Name of Tenant up to that long or even longer",
                     "id":"1-5"
-                },
-                {
-                    "header": "Tenant",
-                    "id":"1-6"
-                },
-                {
-                    "header": "Tenant",
-                    "id":"1-7"
-                },
-                {
-                    "header": "Tenant",
-                    "id":"1-8"
-                },
-                {
-                    "header": "Tenant",
-                    "id":"1-9"
-                },
-                {
-                    "header": "Name of Tenant up to that long or even longer",
-                    "id":"1-10"
-                },
-                {
-                    "header": "Tenant",
-                    "id":"1-11"
-                },
-                {
-                    "header": "Tenant",
-                    "id":"1-12"
-                },
-                {
-                    "header": "Tenant",
-                    "id":"1-13"
-                },
-                {
-                    "header": "Tenant",
-                    "id":"1-14"
-                },
-                {
-                    "header": "Name of Tenant up to that long or even longer",
-                    "id":"1-15"
                 }
             ]
         },
@@ -89,48 +49,8 @@
                     "id":"2-4"
                 },
                 {
-                    "header": "Name of Tenant up to that long or even longer",
+                    "header": "Tenant",
                     "id":"2-5"
-                },
-                {
-                    "header": "Tenant",
-                    "id":"2-6"
-                },
-                {
-                    "header": "Tenant",
-                    "id":"2-7"
-                },
-                {
-                    "header": "Tenant",
-                    "id":"2-8"
-                },
-                {
-                    "header": "Tenant",
-                    "id":"2-9"
-                },
-                {
-                    "header": "Name of Tenant up to that long or even longer",
-                    "id":"2-10"
-                },
-                {
-                    "header": "Tenant",
-                    "id":"2-11"
-                },
-                {
-                    "header": "Tenant",
-                    "id":"2-12"
-                },
-                {
-                    "header": "Tenant",
-                    "id":"2-13"
-                },
-                {
-                    "header": "Tenant",
-                    "id":"2-14"
-                },
-                {
-                    "header": "Name of Tenant up to that long or even longer",
-                    "id":"2-15"
                 }
             ]
         }
