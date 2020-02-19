@@ -3,44 +3,29 @@
     "description": "Description",
     "items": [
         {
-            "header": "Source",
+            "header": "Source 1",
             "description": "Description",
             "icon": "source-code"
         },
         {
-            "header": "Source",
+            "header": "Source 2",
             "description": "Description",
             "icon": "source-code"
         },
         {
-            "header": "Source",
+            "header": "Source 3",
             "description": "Description",
             "icon": "source-code"
         },
         {
-            "header": "Source",
-            "description": "Description",
-            "icon": "along-stacked-chart"
-        },
-        {
-            "header": "Source",
+            "header": "Source 4",
             "description": "Description",
             "icon": "source-code"
         },
         {
-            "header": "Source",
+            "header": "Source 5",
             "description": "Description",
             "icon": "source-code"
-        },
-        {
-            "header": "Source",
-            "description": "Description",
-            "icon": "internet-browser"
-        },
-        {
-            "header": "Source",
-            "description": "Description",
-            "icon": "database"
         }
     ]
 }

@@ -3,21 +3,36 @@ function leftContainerJSON(data) {
     var htmlHead;
     htmlHead = '<h3 class="fd-panel__title">' + data.title + '</h3>';
     htmlHead += '<p class="fd-panel__description">' + data.description + '</p>';
+    $(htmlHead).appendTo('#leftContainer .fd-panel__head');
 
-    $(htmlHead).appendTo('#ux-left-container .fd-panel__head');
-
-    //Panel Body - list
-    $(data.items).each(function () {
+    //Panel Body - List
+    $.each(data.items, function () {
         var htmlItem;
 
         htmlItem = '<li class="fd-list__item">';
-        htmlItem += '   <span class="fd-list__title">' + this.header + '</span>';
-        htmlItem += '   <span class="fd-list__secondary fd-has-color-status-' + this.status_state + '">' + this.status + '</span>';
+        htmlItem += '   <span class="fd-list__title">' + this.name + ' [' + this.id + ']</span>';
+        htmlItem += '   <span class="fd-list__secondary fd-has-color-status-' + this.statusColor + '">' + this.status + '</span>';
         htmlItem += '</li>';
-
-        $(htmlItem).insertAfter("#ux-left-container .fd-list__group-header");
+        $(htmlItem).appendTo("#leftContainer .fd-list");
     });
 
-    //Panel footer
-    $("#ux-left-container-count, #ux-left-container-dropdown-label").append(data.items.length);
+    //Panel Body - List footer
+    var lastItem;
+    lastItem = '<li class="fd-list__footer">' + data.items.length + ' tenants successfully loaded.</li>';
+
+    $('#leftContainer .fd-list').append(lastItem);
+}
+
+function getLeftContainerData(customPath) {
+    $.ajax({
+        dataType: "json",
+        url: customPath + '/src/json/leftContainer.min.json',
+        success: leftContainerJSON,
+        error: function () {
+            console.log('No left container JSON found.');
+        },
+        complete: function () {
+            console.log('Left container JSON loaded.');
+        }
+    });
 }

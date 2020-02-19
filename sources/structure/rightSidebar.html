@@ -3,27 +3,41 @@
 
 <head>
     <title>rightSidebar</title>
+    <meta charset="UTF-8" />
+
+    <link rel="stylesheet" type="text/css"
+        href="https://unpkg.com/fundamental-styles@0.5.0/dist/fundamental-styles.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="../../src/js/importRightSidebar.min.js"></script>
+    <script>
+        $(document).ready(getRightSidebarData('../..'));
+    </script>
 </head>
 
 <body>
 
-    <div class="fd-panel" id="ux-right-sidebar">
+    <div class="fd-panel" id="rightSidebar">
         <div class="fd-panel__header">
-            <div class="fd-panel__head fd-has-display-block"></div>
-            <div class="fd-panel__actions">
-                <button class="fd-button--compact">Hide</button>
-            </div>
-        </div>
-        <div class="fd-panel__filters fd-has-display-block">
 
-            <!-- Panel Filters -->
-            <div class="documentation-site-popover-container">
-                <div class="fd-popover">
-                    <div class="fd-popover__control">
-                        <div>
+            <!-- Panel Header -->
+            <div class="fd-panel__head"></div>
+            <div class="fd-panel__actions">
+                <button class="fd-button--primary sap-icon--hide" id="hideRightSidebar"></button>
+            </div>
+
+        </div>
+        <div class="fd-panel__filters">
+            <div class="fd-tile__content">
+
+                <!-- Panel Filters -->
+                <div class="documentation-site-popover-container">
+                    <div class="fd-popover">
+                        <div class="fd-popover__control">
                             <div class="fd-input-group">
-                                <input type="text" class="fd-input fd-input-group__input"
-                                    placeholder="Search Resources">
+                                <input type="text" class="fd-input fd-input-group__input" value=""
+                                    placeholder="search...">
                                 <span class="fd-input-group__addon fd-input-group__addon--button">
                                     <button class="fd-input-group__button fd-button--light sap-icon--search"></button>
                                 </span>
@@ -31,17 +45,13 @@
                         </div>
                     </div>
                 </div>
+
             </div>
-            
         </div>
-        <div class="fd-panel__body fd-has-padding-none">
-        </div>
-        <div class="fd-panel__footer">
+        <div class="fd-panel__body"></div>
 
-            <!-- Panel Footer -->
-            <a href="#" class="fd-link" tabindex="0">Documentation</a>
+        <div class="fd-panel__footer"></div>
 
-        </div>
     </div>
 
 </body>

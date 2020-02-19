@@ -1,11 +1,10 @@
 function rightContainerJSON(data) {
     //Panel Head
     var htmlHead;
-    htmlHead = '<h3 class="fd-panel__title">' + data.title + ' <span class="fd-counter" aria-label="Unread count">' + data.items.length + '</span></h3>';
+    htmlHead = '<h3 class="fd-panel__title">' + data.title + '</h3>';
     htmlHead += '<p class="fd-panel__description">' + data.description + '</p>';
-
-    $(htmlHead).appendTo('#ux-right-container .fd-panel__head');
-
+    $(htmlHead).appendTo('#rightContainer .fd-panel__head');
+    
     //Panel Body - list
     $(data.items).each(function () {
         var htmlItem;
@@ -25,7 +24,24 @@ function rightContainerJSON(data) {
         htmlItem += '       </div>';
         htmlItem += '   </div>';
         htmlItem += '</div>';
+        
+        $(htmlItem).appendTo("#rightContainer .fd-panel__body");
+    });
 
-        $(htmlItem).appendTo("#ux-right-container .fd-panel__body");
+     //Panel Footer
+     $("#rightContainer .fd-panel__footer").append(data.items.length + " items loaded successfully.");
+}
+
+function getRightContainerData(customPath) {
+    $.ajax({
+        dataType: "json",
+        url: customPath + '/src/json/rightContainer.min.json',
+        success: rightContainerJSON,
+        error: function () {
+            console.log('No right container JSON found.');
+        },
+        complete: function () {
+            console.log('Right container JSON loaded.');
+        }
     });
 }

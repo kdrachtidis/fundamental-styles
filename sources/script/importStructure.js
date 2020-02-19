@@ -1,20 +1,20 @@
 function getStructure() {
-    $('#ux-shellBar').load('src/html/shellBar.min.html', function(){
+    $('#shellBar-shell').load('src/html/shellBar.min.html #shellBar', function(){
         console.log('Shell bar loaded.');
     });
-    $('#ux-leftSidebar').load('src/html/leftSidebar.min.html' , function(){
+    $('#leftSidebar-shell').load('src/html/leftSidebar.min.html #leftSidebar' , function(){
         console.log('Left sidebar loaded.');
     });
-    $('#ux-leftContainer').load('src/html/leftContainer.min.html' , function(){
+    $('#leftContainer-shell').load('src/html/leftContainer.min.html #leftContainer' , function(){
         console.log('Left container loaded.');
     });
-    $('#ux-mainContainer').load('src/html/mainContainer.min.html' , function(){
+    $('#mainContainer-shell').load('src/html/mainContainer.min.html #mainContainer' , function(){
         console.log('Main container loaded.');
     });
-    $('#ux-rightContainer').load('src/html/rightContainer.min.html' , function(){
+    $('#rightContainer-shell').load('src/html/rightContainer.min.html #rightContainer' , function(){
         console.log('Right container loaded.');
     });
-    $('#ux-rightSidebar').load('src/html/rightSidebar.min.html' , function(){
+    $('#rightSidebar-shell').load('src/html/rightSidebar.min.html #rightSidebar' , function(){
         console.log('Right sidebar loaded.');
     });
 }

@@ -3,36 +3,42 @@ function leftSidebarJSON(data) {
     var htmlHead;
     htmlHead = '<h3 class="fd-panel__title">' + data.title + '</h3>';
     htmlHead += '<p class="fd-panel__description">' + data.description + '</p>';
+    $(htmlHead).appendTo('#leftSidebar .fd-panel__head');
 
-    $(htmlHead).appendTo('#ux-left-sidebar .fd-panel__head');
-
-    //Panel Body - Group headers
-    $('#ux-tenant-group-0').append(data.regions[0].name);
-    $('#ux-tenant-group-1').append(data.regions[1].name);
-
-    //Panel Body - list
-    $(data.regions[0].items).each(function () {
+    //Panel Body - List
+    $.each(data.regions, function (i) {
         var htmlItem;
 
-        htmlItem = '<li class="fd-list__item">';
-        htmlItem += '    <span class="fd-list__title">' + this.header + '</span>';
-        htmlItem += '</li>';
+        htmlItem = '<li class="fd-list__group-header" id="group-' + this.id + '">' + this.name + ' ' + this.id + ' (' + this.items.length + ' items)</li>';
+        $(htmlItem).appendTo('#leftSidebar .fd-list');
 
-        $(htmlItem).insertAfter("#ux-tenant-group-0");
+        $.each(data.regions[i].items, function () {
+            var htmlItem;
+
+            htmlItem = '<li class="fd-list__item">';
+            htmlItem += '   <span class="fd-list__title">' + this.header + ' ' + this.id + '</span>';
+            htmlItem += '</li>';
+            $(htmlItem).insertAfter('#leftSidebar #group-' + data.regions[i].id);
+        });
     });
 
-    $(data.regions[1].items).each(function () {
-        var htmlItem;
+    //Panel Body - List footer
+    var lastItem;
+    lastItem = '<li class="fd-list__footer">' + data.regions.length + ' groups of tenants successfully loaded.</li>';
 
-        htmlItem = '<li class="fd-list__item">';
-        htmlItem += '<span class="fd-list__title">' + this.header + '</span>';
-        htmlItem += '</li>';
+    $('#leftSidebar .fd-list').append(lastItem);
+}
 
-        $(htmlItem).insertAfter("#ux-tenant-group-1");
+function getLeftSidebarData(customPath) {
+    $.ajax({
+        dataType: "json",
+        url: customPath + '/src/json/leftSidebar.min.json',
+        success: leftSidebarJSON,
+        error: function () {
+            console.log('No left sidebar JSON found.');
+        },
+        complete: function () {
+            console.log('Left sidebar JSON loaded.');
+        }
     });
-
-    //Panel footer
-    var itemsCount = data.regions[0].items.length + data.regions[1].items.length;
-
-    $("#ux-left-sidebar-count, #ux-left-sidebar-dropdown-label").append(itemsCount);
 }

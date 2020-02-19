@@ -1,13 +1,12 @@
-function rightSidebarJSON(data) {
-    //Panel Head
-    var htmlHead;
-    htmlHead = '<h3 class="fd-panel__title">' + data.title + '</h3>';
-    htmlHead += '<p class="fd-panel__description">' + data.description + '</p>';
-
-    $(htmlHead).appendTo('#ux-right-sidebar .fd-panel__head');
-
-    //Panel Body - list
-    $(data.items).each(function () {
+function rightSidebarJSON(data){
+     //Panel Head
+     var htmlHead;
+     htmlHead = '<h3 class="fd-panel__title">' + data.title + '</h3>';
+     htmlHead += '<p class="fd-panel__description">' + data.description + '</p>';
+     $(htmlHead).appendTo('#rightSidebar .fd-panel__head');
+    
+    //Panel Body - List
+    $.each(data.items, function () {
         var htmlItem;
 
         htmlItem = '<div class="fd-tile">';
@@ -21,10 +20,10 @@ function rightSidebarJSON(data) {
         htmlItem += '   <div class="fd-tile__actions">';
         htmlItem += '       <div class="fd-popover fd-popover--right">';
         htmlItem += '           <div class="fd-popover__control">';
-        htmlItem += '               <button class="fd-button--light sap-icon--overflow" aria-label="More" aria-expanded="false" aria-controls="WQIDD179" aria-haspopup="true"></button>';
+        htmlItem += '               <button class="fd-button--light sap-icon--overflow" aria-label="More" aria-expanded="false" aria-controls="WQIDD179" aria-haspopup="true" id="WQIDD179"></button>';
         htmlItem += '           </div>';
         htmlItem += '           <div class="fd-popover__body fd-popover__body--right fd-popover__body--no-arrow" aria-hidden="true" id="WQIDD179">';
-        htmlItem += '               <nav class="fd-menu" id="">';
+        htmlItem += '               <nav class="fd-menu">';
         htmlItem += '                   <ul class="fd-menu__list">';
         htmlItem += '                       <li><a href="#" class="fd-menu__item">Option 1</a></li>';
         htmlItem += '                       <li><a href="#" class="fd-menu__item">Option 2</a></li>';
@@ -35,7 +34,24 @@ function rightSidebarJSON(data) {
         htmlItem += '       </div>';
         htmlItem += '   </div>';
         htmlItem += '</div>';
-        
-        $(htmlItem).appendTo("#ux-right-sidebar .fd-panel__body");
+
+        $(htmlItem).appendTo("#rightSidebar .fd-panel__body");
+    });
+
+    //Panel Body - Panel footer
+    $("#rightSidebar .fd-panel__footer").append(data.items.length + " resources available.");
+}
+
+function getRightSidebarData(customPath){
+    $.ajax({
+        dataType: "json",
+        url: customPath + '/src/json/rightSidebar.min.json',
+        success: rightSidebarJSON,
+        error: function(){
+            console.log('No right sidebar JSON found.');
+        },
+        complete: function(){
+            console.log('Right sidebar JSON loaded.');
+        }
     });
 }

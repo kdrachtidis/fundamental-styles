@@ -3,26 +3,39 @@
 
 <head>
     <title>leftSidebar</title>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/fundamental-styles@0.5.0/dist/fundamental-styles.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="../../src/js/importLeftSidebar.min.js"></script>
+    <script>
+        $(document).ready(getLeftSidebarData('../..'));
+    </script>
 </head>
 
 <body>
 
-    <div class="fd-panel" id="ux-left-sidebar">
+    <div class="fd-panel" id="leftSidebar">
         <div class="fd-panel__header">
-            <div class="fd-panel__head fd-has-display-block"></div>
-            <div class="fd-panel__actions">
-                <button class="fd-button--compact">Hide</button>
-            </div>
-        </div>
-        <div class="fd-panel__filters fd-has-display-block">
 
-            <!-- Panel Filters -->
-            <div class="documentation-site-popover-container">
-                <div class="fd-popover">
-                    <div class="fd-popover__control">
-                        <div>
+            <!-- Panel Header -->
+            <div class="fd-panel__head"></div>
+            <div class="fd-panel__actions">
+                <button class="fd-button--primary sap-icon--hide" id="hideLeftSidebar"></button>
+            </div>
+
+        </div>
+        <div class="fd-panel__filters">
+            <div class="fd-tile__content">
+
+                <!-- Panel Filters -->
+                <div class="documentation-site-popover-container">
+                    <div class="fd-popover">
+                        <div class="fd-popover__control">
                             <div class="fd-input-group">
-                                <input type="text" class="fd-input fd-input-group__input" placeholder="Search Tenants">
+                                <input type="text" class="fd-input fd-input-group__input" value="" placeholder="search...">
                                 <span class="fd-input-group__addon fd-input-group__addon--button">
                                     <button class="fd-input-group__button fd-button--light sap-icon--search"></button>
                                 </span>
@@ -30,24 +43,18 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
+            </div>
         </div>
-        <div class="fd-panel__body fd-has-padding-none">
-            
+        <div class="fd-panel__body">
+
             <!-- Panel Body -->
-            <ul class="fd-list">
-                <li class="fd-list__group-header" id="ux-tenant-group-0"></li>
-                <li class="fd-list__group-header" id="ux-tenant-group-1"></li>
-                <li class="fd-list__footer">
-                    <span id="ux-left-sidebar-count"></span>&nbsp;items loaded succesfully.
-                </li>
-            </ul>
+            <ul class="fd-list"></ul>
 
         </div>
         <div class="fd-panel__footer">
 
-             <!-- Panel Footer -->
+            <!-- Panel Footer -->
             <a href="#" class="fd-link" tabindex="0">Documentation</a>
 
         </div>

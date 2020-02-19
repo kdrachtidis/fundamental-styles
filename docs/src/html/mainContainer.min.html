@@ -3,150 +3,45 @@
 
 <head>
     <title>mainContainer</title>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/fundamental-styles@0.5.0/dist/fundamental-styles.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="../../src/js/importMainContainer.min.js"></script>
+    <script>
+        $(document).ready(getMainContainerData('../..'));
+    </script>
 </head>
 
 <body>
-    
-    <!-- Panel -->
-    <div class="fd-panel">
+
+    <div class="fd-panel" id="mainContainer">
         <div class="fd-panel__header">
 
-            <div class="fd-panel__head">
-                <h3 class="fd-panel__title">
-                    Account
-                </h3>
-                <p id="proto-left-sidebar-description" class="fd-panel__description">Description
-                </p>
-            </div>
-
+            <!-- Panel Header -->
+            <div class="fd-panel__head"></div>
             <div class="fd-panel__actions">
-                <button class="fd-button--compact">Hide</button>
+                <button class="fd-button--primary sap-icon--hide"></button>
             </div>
+            
         </div>
-        <div class="fd-panel__filters fd-has-display-block">
-            <span class="fd-badge fd-badge--pill"> Tag </span>&nbsp;<span class="fd-badge fd-badge--pill"> Tag
-            </span>&nbsp;<span class="fd-badge fd-badge--pill"> Tag </span>
-        </div>
+
+        <div class="fd-panel__filters fd-has-display-block"></div>
         <div class="fd-panel__body fd-has-padding-none">
 
-            <ul class="fd-tabs fd-tabs--s fd-tabs--compact" role="tablist">
-                <li class="fd-tabs__item">
-                    <a class="fd-tabs__link" aria-controls="d9vOir" href="#d9vOir" role="tab">
-                        <p class="fd-tabs__count">2</p>
-                        <span class="fd-tabs__tag">
-                            Logs
-                        </span>
-                    </a>
-                </li>
-                <li class="fd-tabs__item">
-                    <a class="fd-tabs__link" aria-controls="bSj6ft" aria-selected="true" href="#bSj6ft" role="tab">
-                        <p class="fd-tabs__count">9</p>
-                        <span class="fd-tabs__tag">
-                            Objects
-                        </span>
-                    </a>
-                </li>
-                <li class="fd-tabs__item">
-                    <a class="fd-tabs__link" aria-controls="VrHfHi" href="#VrHfHi" role="tab">
-                        <p class="fd-tabs__count">12</p>
-                        <span class="fd-tabs__tag">
-                            Certificates
-                        </span>
-                    </a>
-                </li>
-            </ul>
+            <!-- Panel Body -->
+            <ul class="fd-tabs fd-tabs--s fd-tabs--compact" role="tablist"></ul>
 
-            <div class="fd-tabs__panel" aria-expanded="false" id="d9vOir" role="tabpanel">
-                Lorem ipsum
-            </div>
-            <div class="fd-tabs__panel" aria-expanded="true" id="bSj6ft" role="tabpanel">
-                <table class="fd-table">
-                    <thead class="fd-table__header">
-                        <tr class="fd-table__row">
-                            <th class="fd-table__cell" scope="col"></th>
-                            <th class="fd-table__cell" scope="col">Name</th>
-                            <th class="fd-table__cell" scope="col">Type</th>
-                            <th class="fd-table__cell" scope="col">Author</th>
-                            <th class="fd-table__cell" scope="col">Creation Date</th>
-                        </tr>
-                    </thead>
-                    <tbody class="fd-table__body">
-                        <tr class="fd-table__row">
-                            <td class="fd-table__cell"><span class="fd-identifier fd-identifier--s fd-identifier--circle sap-icon--database" role="presentation"></span></td>
-                            <td class="fd-table__cell">Object</td>
-                            <td class="fd-table__cell">Type</td>
-                            <td class="fd-table__cell">User</td>
-                            <td class="fd-table__cell">January 1, 2020</td>
-                        </tr>
-                        <tr class="fd-table__row">
-                            <td class="fd-table__cell"><span class="fd-identifier fd-identifier--s fd-identifier--circle sap-icon--table-view" role="presentation"></span></td>
-                            <td class="fd-table__cell">Object</td>
-                            <td class="fd-table__cell">Type</td>
-                            <td class="fd-table__cell">User</td>
-                            <td class="fd-table__cell">January 1, 2020</td>
-                        </tr>
-                        <tr class="fd-table__row">
-                            <td class="fd-table__cell"><span class="fd-identifier fd-identifier--s fd-identifier--circle sap-icon--excel-attachment" role="presentation"></span></td>
-                            <td class="fd-table__cell">Object</td>
-                            <td class="fd-table__cell">Type</td>
-                            <td class="fd-table__cell">User</td>
-                            <td class="fd-table__cell">January 1, 2020</td>
-                        </tr>
-                        <tr class="fd-table__row">
-                            <td class="fd-table__cell"><span class="fd-identifier fd-identifier--s fd-identifier--circle sap-icon--database" role="presentation"></span></td>
-                            <td class="fd-table__cell">Object</td>
-                            <td class="fd-table__cell">Type</td>
-                            <td class="fd-table__cell">User</td>
-                            <td class="fd-table__cell">January 1, 2020</td>
-                        </tr>
-                        <tr class="fd-table__row">
-                            <td class="fd-table__cell"><span class="fd-identifier fd-identifier--s fd-identifier--circle sap-icon--table-view" role="presentation"></span></td>
-                            <td class="fd-table__cell">Object</td>
-                            <td class="fd-table__cell">Type</td>
-                            <td class="fd-table__cell">User</td>
-                            <td class="fd-table__cell">January 1, 2020</td>
-                        </tr>
-                        <tr class="fd-table__row">
-                            <td class="fd-table__cell"><span class="fd-identifier fd-identifier--s fd-identifier--circle sap-icon--excel-attachment" role="presentation"></span></td>
-                            <td class="fd-table__cell">Object</td>
-                            <td class="fd-table__cell">Type</td>
-                            <td class="fd-table__cell">User</td>
-                            <td class="fd-table__cell">January 1, 2020</td>
-                        </tr>
-                        <tr class="fd-table__row">
-                            <td class="fd-table__cell"><span class="fd-identifier fd-identifier--s fd-identifier--circle sap-icon--database" role="presentation"></span></td>
-                            <td class="fd-table__cell">Object</td>
-                            <td class="fd-table__cell">Type</td>
-                            <td class="fd-table__cell">User</td>
-                            <td class="fd-table__cell">January 1, 2020</td>
-                        </tr>
-                        <tr class="fd-table__row">
-                            <td class="fd-table__cell"><span class="fd-identifier fd-identifier--s fd-identifier--circle sap-icon--table-view" role="presentation"></span></td>
-                            <td class="fd-table__cell">Object</td>
-                            <td class="fd-table__cell">Type</td>
-                            <td class="fd-table__cell">User</td>
-                            <td class="fd-table__cell">January 1, 2020</td>
-                        </tr>
-                        <tr class="fd-table__row">
-                            <td class="fd-table__cell"><span class="fd-identifier fd-identifier--s fd-identifier--circle sap-icon--excel-attachment" role="presentation"></span></td>
-                            <td class="fd-table__cell">Object</td>
-                            <td class="fd-table__cell">Type</td>
-                            <td class="fd-table__cell">User</td>
-                            <td class="fd-table__cell">January 1, 2020</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="fd-tabs__panel" aria-expanded="false" id="VrHfHi" role="tabpanel">
-                Nullam ut
-            </div>
         </div>
         <div class="fd-panel__footer">
+
+            <!-- Panel Footer -->
             <a href="#" class="fd-link" tabindex="0">Documentation</a>
+
         </div>
     </div>
-    <!-- End Panel -->
-
 </body>
 
 </html>
