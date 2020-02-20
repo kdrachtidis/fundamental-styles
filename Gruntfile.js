@@ -55,7 +55,6 @@ module.exports = function (grunt) {
             build: {
                 files: {
                     'docs/src/json/leftSidebar.min.json': 'sources/content/leftSidebar.json',
-                    'docs/src/json/leftContainer.min.json': 'sources/content/leftContainer.json',
                     'docs/src/json/mainContainer.min.json': 'sources/content/mainContainer.json',
                     'docs/src/json/rightContainer.min.json': 'sources/content/rightContainer.json',
                     'docs/src/json/rightSidebar.min.json': 'sources/content/rightSidebar.json'

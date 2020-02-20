@@ -1,56 +1,705 @@
 {
     "title": "Tenants",
-    "description": "Description",
     "regions": [
         {
             "name": "Group of tenants",
             "id": "1",
-            "items": [
+            "tenants": [
                 {
-                    "header": "Tenant",
-                    "id":"1-1"
+                    "name": "Tenant",
+                    "id": "1-1",
+                    "accounts": [
+                        {
+                            "title": "Accounts",
+                            "items": [
+                                {
+                                    "name": "Account",
+                                    "status": "Active",
+                                    "statusColor": "1",
+                                    "id": "GROUP-1_1-TENANT-1_ACCOUNT-1"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Disabled",
+                                    "statusColor": "2",
+                                    "id": "GROUP-1_1-TENANT-1_ACCOUNT-2"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Expired",
+                                    "statusColor": "3",
+                                    "id": "GROUP-1_1-TENANT-1_ACCOUNT-3"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Active",
+                                    "statusColor": "1",
+                                    "id": "GROUP-1_1-TENANT-1_ACCOUNT-4"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Disabled",
+                                    "statusColor": "2",
+                                    "id": "GROUP-1_1-TENANT-1_ACCOUNT-5"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Expired",
+                                    "statusColor": "3",
+                                    "id": "GROUP-1_1-TENANT-1_ACCOUNT-6"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Active",
+                                    "statusColor": "1",
+                                    "id": "GROUP-1_1-TENANT-1_ACCOUNT-7"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Disabled",
+                                    "statusColor": "2",
+                                    "id": "GROUP-1_1-TENANT-1_ACCOUNT-8"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Expired",
+                                    "statusColor": "3",
+                                    "id": "GROUP-1_1-TENANT-1_ACCOUNT-9"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Active",
+                                    "statusColor": "1",
+                                    "id": "GROUP-1_1-TENANT-1_ACCOUNT-10"
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
-                    "header": "Tenant",
-                    "id":"1-2"
+                    "name": "Tenant",
+                    "id": "1-2",
+                    "accounts": [
+                        {
+                            "title": "Accounts",
+                            "items": [
+                                {
+                                    "name": "Account",
+                                    "status": "Active",
+                                    "statusColor": "1",
+                                    "id": "GROUP-1_1-TENANT-2_ACCOUNT-1"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Disabled",
+                                    "statusColor": "2",
+                                    "id": "GROUP-1_1-TENANT-2_ACCOUNT-2"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Expired",
+                                    "statusColor": "3",
+                                    "id": "GROUP-1_1-TENANT-2_ACCOUNT-3"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Active",
+                                    "statusColor": "1",
+                                    "id": "GROUP-1_1-TENANT-2_ACCOUNT-4"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Disabled",
+                                    "statusColor": "2",
+                                    "id": "GROUP-1_1-TENANT-2_ACCOUNT-5"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Expired",
+                                    "statusColor": "3",
+                                    "id": "GROUP-1_1-TENANT-2_ACCOUNT-6"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Active",
+                                    "statusColor": "1",
+                                    "id": "GROUP-1_1-TENANT-2_ACCOUNT-7"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Disabled",
+                                    "statusColor": "2",
+                                    "id": "GROUP-1_1-TENANT-2_ACCOUNT-8"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Expired",
+                                    "statusColor": "3",
+                                    "id": "GROUP-1_1-TENANT-2_ACCOUNT-9"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Active",
+                                    "statusColor": "1",
+                                    "id": "GROUP-1_1-TENANT-2_ACCOUNT-10"
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
-                    "header": "Tenant",
-                    "id":"1-3"
+                    "name": "Tenant",
+                    "id": "1-3",
+                    "accounts": [
+                        {
+                            "title": "Accounts",
+                            "items": [
+                                {
+                                    "name": "Account",
+                                    "status": "Active",
+                                    "statusColor": "1",
+                                    "id": "GROUP-1_1-TENANT-3_ACCOUNT-1"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Disabled",
+                                    "statusColor": "2",
+                                    "id": "GROUP-1_1-TENANT-3_ACCOUNT-2"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Expired",
+                                    "statusColor": "3",
+                                    "id": "GROUP-1_1-TENANT-3_ACCOUNT-3"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Active",
+                                    "statusColor": "1",
+                                    "id": "GROUP-1_1-TENANT-3_ACCOUNT-4"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Disabled",
+                                    "statusColor": "2",
+                                    "id": "GROUP-1_1-TENANT-3_ACCOUNT-5"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Expired",
+                                    "statusColor": "3",
+                                    "id": "GROUP-1_1-TENANT-3_ACCOUNT-6"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Active",
+                                    "statusColor": "1",
+                                    "id": "GROUP-1_1-TENANT-3_ACCOUNT-7"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Disabled",
+                                    "statusColor": "2",
+                                    "id": "GROUP-1_1-TENANT-3_ACCOUNT-8"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Expired",
+                                    "statusColor": "3",
+                                    "id": "GROUP-1_1-TENANT-3_ACCOUNT-9"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Active",
+                                    "statusColor": "1",
+                                    "id": "GROUP-1_1-TENANT-3_ACCOUNT-10"
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
-                    "header": "Tenant",
-                    "id":"1-4"
+                    "name": "Tenant",
+                    "id": "1-4",
+                    "accounts": [
+                        {
+                            "name": "Account",
+                            "status": "Active",
+                            "statusColor": "1",
+                            "id": "GROUP-1_1-TENANT-4_ACCOUNT-1"
+                        },
+                        {
+                            "name": "Account",
+                            "status": "Disabled",
+                            "statusColor": "2",
+                            "id": "GROUP-1_1-TENANT-4_ACCOUNT-2"
+                        },
+                        {
+                            "name": "Account",
+                            "status": "Expired",
+                            "statusColor": "3",
+                            "id": "GROUP-1_1-TENANT-4_ACCOUNT-3"
+                        },
+                        {
+                            "name": "Account",
+                            "status": "Active",
+                            "statusColor": "1",
+                            "id": "GROUP-1_1-TENANT-4_ACCOUNT-4"
+                        },
+                        {
+                            "name": "Account",
+                            "status": "Disabled",
+                            "statusColor": "2",
+                            "id": "GROUP-1_1-TENANT-4_ACCOUNT-5"
+                        },
+                        {
+                            "name": "Account",
+                            "status": "Expired",
+                            "statusColor": "3",
+                            "id": "GROUP-1_1-TENANT-4_ACCOUNT-6"
+                        },
+                        {
+                            "name": "Account",
+                            "status": "Active",
+                            "statusColor": "1",
+                            "id": "GROUP-1_1-TENANT-4_ACCOUNT-7"
+                        },
+                        {
+                            "name": "Account",
+                            "status": "Disabled",
+                            "statusColor": "2",
+                            "id": "GROUP-1_1-TENANT-4_ACCOUNT-8"
+                        },
+                        {
+                            "name": "Account",
+                            "status": "Expired",
+                            "statusColor": "3",
+                            "id": "GROUP-1_1-TENANT-4_ACCOUNT-9"
+                        },
+                        {
+                            "name": "Account",
+                            "status": "Active",
+                            "statusColor": "1",
+                            "id": "GROUP-1_1-TENANT-4_ACCOUNT-10"
+                        }
+                    ]
                 },
                 {
-                    "header": "Name of Tenant up to that long or even longer",
-                    "id":"1-5"
+                    "name": "Tenant",
+                    "id": "1-5",
+                    "accounts": [
+                        {
+                            "name": "Account",
+                            "status": "Active",
+                            "statusColor": "1",
+                            "id": "GROUP-1_1-TENANT-5_ACCOUNT-1"
+                        },
+                        {
+                            "name": "Account",
+                            "status": "Disabled",
+                            "statusColor": "2",
+                            "id": "GROUP-1_1-TENANT-5_ACCOUNT-2"
+                        },
+                        {
+                            "name": "Account",
+                            "status": "Expired",
+                            "statusColor": "3",
+                            "id": "GROUP-1_1-TENANT-5_ACCOUNT-3"
+                        },
+                        {
+                            "name": "Account",
+                            "status": "Active",
+                            "statusColor": "1",
+                            "id": "GROUP-1_1-TENANT-5_ACCOUNT-4"
+                        },
+                        {
+                            "name": "Account",
+                            "status": "Disabled",
+                            "statusColor": "2",
+                            "id": "GROUP-1_1-TENANT-5_ACCOUNT-5"
+                        },
+                        {
+                            "name": "Account",
+                            "status": "Expired",
+                            "statusColor": "3",
+                            "id": "GROUP-1_1-TENANT-5_ACCOUNT-6"
+                        },
+                        {
+                            "name": "Account",
+                            "status": "Active",
+                            "statusColor": "1",
+                            "id": "GROUP-1_1-TENANT-5_ACCOUNT-7"
+                        },
+                        {
+                            "name": "Account",
+                            "status": "Disabled",
+                            "statusColor": "2",
+                            "id": "GROUP-1_1-TENANT-5_ACCOUNT-8"
+                        },
+                        {
+                            "name": "Account",
+                            "status": "Expired",
+                            "statusColor": "3",
+                            "id": "GROUP-1_1-TENANT-5_ACCOUNT-9"
+                        },
+                        {
+                            "name": "Account",
+                            "status": "Active",
+                            "statusColor": "1",
+                            "id": "GROUP-1_1-TENANT-5_ACCOUNT-10"
+                        }
+                    ]
                 }
             ]
         },
         {
             "name": "Group of tenants",
             "id": "2",
-            "items": [
+            "tenants": [
                 {
-                    "header": "Tenant",
-                    "id":"2-1"
+                    "name": "Tenant",
+                    "id": "2-1",
+                    "accounts": [
+                        {
+                            "title": "Accounts",
+                            "items": [
+                                {
+                                    "name": "Account",
+                                    "status": "Active",
+                                    "statusColor": "1",
+                                    "id": "GROUP-2_1-TENANT-1_ACCOUNT-1"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Disabled",
+                                    "statusColor": "2",
+                                    "id": "GROUP-2_1-TENANT-1_ACCOUNT-2"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Expired",
+                                    "statusColor": "3",
+                                    "id": "GROUP-2_1-TENANT-1_ACCOUNT-3"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Active",
+                                    "statusColor": "1",
+                                    "id": "GROUP-2_1-TENANT-1_ACCOUNT-4"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Disabled",
+                                    "statusColor": "2",
+                                    "id": "GROUP-2_1-TENANT-1_ACCOUNT-5"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Expired",
+                                    "statusColor": "3",
+                                    "id": "GROUP-2_1-TENANT-1_ACCOUNT-6"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Active",
+                                    "statusColor": "1",
+                                    "id": "GROUP-2_1-TENANT-1_ACCOUNT-7"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Disabled",
+                                    "statusColor": "2",
+                                    "id": "GROUP-2_1-TENANT-1_ACCOUNT-8"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Expired",
+                                    "statusColor": "3",
+                                    "id": "GROUP-2_1-TENANT-1_ACCOUNT-9"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Active",
+                                    "statusColor": "1",
+                                    "id": "GROUP-2_1-TENANT-1_ACCOUNT-10"
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
-                    "header": "Tenant",
-                    "id":"2-2"
+                    "name": "Tenant",
+                    "id": "2-2",
+                    "accounts": [
+                        {
+                            "title": "Accounts",
+                            "items": [
+                                {
+                                    "name": "Account",
+                                    "status": "Active",
+                                    "statusColor": "1",
+                                    "id": "GROUP-2_1-TENANT-2_ACCOUNT-1"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Disabled",
+                                    "statusColor": "2",
+                                    "id": "GROUP-2_1-TENANT-2_ACCOUNT-2"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Expired",
+                                    "statusColor": "3",
+                                    "id": "GROUP-2_1-TENANT-2_ACCOUNT-3"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Active",
+                                    "statusColor": "1",
+                                    "id": "GROUP-2_1-TENANT-2_ACCOUNT-4"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Disabled",
+                                    "statusColor": "2",
+                                    "id": "GROUP-2_1-TENANT-2_ACCOUNT-5"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Expired",
+                                    "statusColor": "3",
+                                    "id": "GROUP-2_1-TENANT-2_ACCOUNT-6"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Active",
+                                    "statusColor": "1",
+                                    "id": "GROUP-2_1-TENANT-2_ACCOUNT-7"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Disabled",
+                                    "statusColor": "2",
+                                    "id": "GROUP-2_1-TENANT-2_ACCOUNT-8"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Expired",
+                                    "statusColor": "3",
+                                    "id": "GROUP-2_1-TENANT-2_ACCOUNT-9"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Active",
+                                    "statusColor": "1",
+                                    "id": "GROUP-2_1-TENANT-2_ACCOUNT-10"
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
-                    "header": "Tenant",
-                    "id":"2-3"
+                    "name": "Tenant",
+                    "id": "2-3",
+                    "accounts": [
+                        {
+                            "title": "Accounts",
+                            "items": [
+                                {
+                                    "name": "Account",
+                                    "status": "Active",
+                                    "statusColor": "1",
+                                    "id": "GROUP-2_1-TENANT-3_ACCOUNT-1"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Disabled",
+                                    "statusColor": "2",
+                                    "id": "GROUP-2_1-TENANT-3_ACCOUNT-2"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Expired",
+                                    "statusColor": "3",
+                                    "id": "GROUP-2_1-TENANT-3_ACCOUNT-3"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Active",
+                                    "statusColor": "1",
+                                    "id": "GROUP-2_1-TENANT-3_ACCOUNT-4"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Disabled",
+                                    "statusColor": "2",
+                                    "id": "GROUP-2_1-TENANT-3_ACCOUNT-5"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Expired",
+                                    "statusColor": "3",
+                                    "id": "GROUP-2_1-TENANT-3_ACCOUNT-6"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Active",
+                                    "statusColor": "1",
+                                    "id": "GROUP-2_1-TENANT-3_ACCOUNT-7"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Disabled",
+                                    "statusColor": "2",
+                                    "id": "GROUP-2_1-TENANT-3_ACCOUNT-8"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Expired",
+                                    "statusColor": "3",
+                                    "id": "GROUP-2_1-TENANT-3_ACCOUNT-9"
+                                },
+                                {
+                                    "name": "Account",
+                                    "status": "Active",
+                                    "statusColor": "1",
+                                    "id": "GROUP-2_1-TENANT-3_ACCOUNT-10"
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
-                    "header": "Tenant",
-                    "id":"2-4"
+                    "name": "Tenant",
+                    "id": "2-4",
+                    "accounts": [
+                        {
+                            "name": "Account",
+                            "status": "Active",
+                            "statusColor": "1",
+                            "id": "GROUP-2_1-TENANT-4_ACCOUNT-1"
+                        },
+                        {
+                            "name": "Account",
+                            "status": "Disabled",
+                            "statusColor": "2",
+                            "id": "GROUP-2_1-TENANT-4_ACCOUNT-2"
+                        },
+                        {
+                            "name": "Account",
+                            "status": "Expired",
+                            "statusColor": "3",
+                            "id": "GROUP-2_1-TENANT-4_ACCOUNT-3"
+                        },
+                        {
+                            "name": "Account",
+                            "status": "Active",
+                            "statusColor": "1",
+                            "id": "GROUP-2_1-TENANT-4_ACCOUNT-4"
+                        },
+                        {
+                            "name": "Account",
+                            "status": "Disabled",
+                            "statusColor": "2",
+                            "id": "GROUP-2_1-TENANT-4_ACCOUNT-5"
+                        },
+                        {
+                            "name": "Account",
+                            "status": "Expired",
+                            "statusColor": "3",
+                            "id": "GROUP-2_1-TENANT-4_ACCOUNT-6"
+                        },
+                        {
+                            "name": "Account",
+                            "status": "Active",
+                            "statusColor": "1",
+                            "id": "GROUP-2_1-TENANT-4_ACCOUNT-7"
+                        },
+                        {
+                            "name": "Account",
+                            "status": "Disabled",
+                            "statusColor": "2",
+                            "id": "GROUP-2_1-TENANT-4_ACCOUNT-8"
+                        },
+                        {
+                            "name": "Account",
+                            "status": "Expired",
+                            "statusColor": "3",
+                            "id": "GROUP-2_1-TENANT-4_ACCOUNT-9"
+                        },
+                        {
+                            "name": "Account",
+                            "status": "Active",
+                            "statusColor": "1",
+                            "id": "GROUP-2_1-TENANT-4_ACCOUNT-10"
+                        }
+                    ]
                 },
                 {
-                    "header": "Tenant",
-                    "id":"2-5"
+                    "name": "Tenant",
+                    "id": "2-5",
+                    "accounts": [
+                        {
+                            "name": "Account",
+                            "status": "Active",
+                            "statusColor": "1",
+                            "id": "GROUP-2_1-TENANT-5_ACCOUNT-1"
+                        },
+                        {
+                            "name": "Account",
+                            "status": "Disabled",
+                            "statusColor": "2",
+                            "id": "GROUP-2_1-TENANT-5_ACCOUNT-2"
+                        },
+                        {
+                            "name": "Account",
+                            "status": "Expired",
+                            "statusColor": "3",
+                            "id": "GROUP-2_1-TENANT-5_ACCOUNT-3"
+                        },
+                        {
+                            "name": "Account",
+                            "status": "Active",
+                            "statusColor": "1",
+                            "id": "GROUP-2_1-TENANT-5_ACCOUNT-4"
+                        },
+                        {
+                            "name": "Account",
+                            "status": "Disabled",
+                            "statusColor": "2",
+                            "id": "GROUP-2_1-TENANT-5_ACCOUNT-5"
+                        },
+                        {
+                            "name": "Account",
+                            "status": "Expired",
+                            "statusColor": "3",
+                            "id": "GROUP-2_1-TENANT-5_ACCOUNT-6"
+                        },
+                        {
+                            "name": "Account",
+                            "status": "Active",
+                            "statusColor": "1",
+                            "id": "GROUP-2_1-TENANT-5_ACCOUNT-7"
+                        },
+                        {
+                            "name": "Account",
+                            "status": "Disabled",
+                            "statusColor": "2",
+                            "id": "GROUP-2_1-TENANT-5_ACCOUNT-8"
+                        },
+                        {
+                            "name": "Account",
+                            "status": "Expired",
+                            "statusColor": "3",
+                            "id": "GROUP-2_1-TENANT-5_ACCOUNT-9"
+                        },
+                        {
+                            "name": "Account",
+                            "status": "Active",
+                            "statusColor": "1",
+                            "id": "GROUP-2_1-TENANT-5_ACCOUNT-10"
+                        }
+                    ]
                 }
             ]
         }

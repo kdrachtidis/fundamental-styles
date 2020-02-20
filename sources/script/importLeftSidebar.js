@@ -2,21 +2,21 @@ function leftSidebarJSON(data) {
     //Panel Head
     var htmlHead;
     htmlHead = '<h3 class="fd-panel__title">' + data.title + '</h3>';
-    htmlHead += '<p class="fd-panel__description">' + data.description + '</p>';
+    htmlHead += '<p class="fd-panel__description">All ' + data.title + '</p>';
     $(htmlHead).appendTo('#leftSidebar .fd-panel__head');
 
     //Panel Body - List
     $.each(data.regions, function (i) {
         var htmlItem;
 
-        htmlItem = '<li class="fd-list__group-header" id="group-' + this.id + '">' + this.name + ' ' + this.id + ' (' + this.items.length + ' items)</li>';
+        htmlItem = '<li class="fd-list__group-header" id="group-' + this.id + '">' + this.name + ' ' + this.id + ' (' + this.tenants.length + ' items)</li>';
         $(htmlItem).appendTo('#leftSidebar .fd-list');
 
-        $.each(data.regions[i].items, function () {
+        $.each(data.regions[i].tenants, function (j) {
             var htmlItem;
 
             htmlItem = '<li class="fd-list__item">';
-            htmlItem += '   <span class="fd-list__title">' + this.header + ' ' + this.id + '</span>';
+            htmlItem += '   <span class="fd-list__title">' + this.name + ' ' + this.id + '</span>';
             htmlItem += '</li>';
             $(htmlItem).insertAfter('#leftSidebar #group-' + data.regions[i].id);
         });
