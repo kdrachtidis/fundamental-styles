@@ -1,9 +1,15 @@
 function leftContainerJSON(data) {
+    var htmlHeader;
+    var htmlFooter;
+    var SelectedParentItemName = data.regions[0].tenants[0].TenantName;
+    var SelectedParentItemId = data.regions[0].tenants[0].TenantId;
+    var SelectedItemType = data.SecondLevelContent;
+    var SelectedItemTypeCount = data.regions[0].tenants[0].accounts.length;
+
     //Panel Head
-    var htmlHead;
-    htmlHead = '<h3 class="fd-panel__title">' + data.SecondLevelContent + '</h3>';
-    htmlHead += '<p class="fd-panel__description">' + data.regions[0].tenants[0].TenantName + ' ' + data.regions[0].tenants[0].TenantId +'</p>';
-    $(htmlHead).appendTo('#leftContainer .fd-panel__head');
+    htmlHeader = '<h3 class="fd-panel__title">' + SelectedItemType + '</h3>';
+    htmlHeader += '<p class="fd-panel__description">' + SelectedParentItemName + ' ' + SelectedParentItemId + '</p>';
+    $(htmlHeader).appendTo('#leftContainer .fd-panel__head');
 
     //Panel Body - List
     $.each(data.regions[0].tenants[0].accounts, function () {
@@ -17,22 +23,6 @@ function leftContainerJSON(data) {
     });
 
     //Panel Body - List footer
-    var lastItem;
-    lastItem = '<li class="fd-list__footer">' + data.regions[0].tenants[0].accounts.length + '&nbsp;' + data.ThirdLevelContent + ' loaded successfully.</li>';
-
-    $('#leftContainer .fd-list').append(lastItem);
-}
-
-function getData(customPath) {
-    $.ajax({
-        dataType: "json",
-        url: customPath + '/src/json/leftSidebar.min.json',
-        success: leftContainerJSON,
-        error: function () {
-            console.log('No left sidebar JSON found.');
-        },
-        complete: function () {
-            console.log('Left sidebar JSON loaded.');
-        }
-    });
+    htmlFooter = '<li class="fd-list__footer">' + SelectedItemTypeCount + '&nbsp;' + SelectedItemType + ' loaded successfully.</li>';
+    $('#leftContainer .fd-list').append(htmlFooter);
 }

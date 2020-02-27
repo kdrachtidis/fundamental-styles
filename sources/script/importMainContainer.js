@@ -1,12 +1,24 @@
 function mainContainerJSON(data) {
+    var htmlHeader;
+    var SelectedItemName = data.regions[0].tenants[0].accounts[0].AccountName;
+    var SelectedItemId = data.regions[0].tenants[0].accounts[0].AccountId;
+    var SelectedItemTags = data.regions[0].tenants[0].accounts[0].AccountTags;
+    var SelectedItemType = data.ThirdLevelContent;
+    var SelectedItemObjects = data.regions[0].tenants[0].accounts[0].AccountObjects;
+    var SelectedItemObjectsTab1 = data.regions[0].tenants[0].accounts[0].AccountObjects[0].items;
+    var SelectedItemObjectsTab2 = data.regions[0].tenants[0].accounts[0].AccountObjects[1].items;
+    var SelectedItemObjectsTab3 = data.regions[0].tenants[0].accounts[0].AccountObjects[2].items;
+    var SelectedItemObjectsTab1Id = data.regions[0].tenants[0].accounts[0].AccountObjects[0].id;
+    var SelectedItemObjectsTab2Id = data.regions[0].tenants[0].accounts[0].AccountObjects[1].id;
+    var SelectedItemObjectsTab3Id = data.regions[0].tenants[0].accounts[0].AccountObjects[2].id;
+
     //Panel Head
-    var htmlHead;
-    htmlHead = '<h3 class="fd-panel__title">' + data.ThirdLevelContent + '</h3>';
-    htmlHead += '<p class="fd-panel__description">' + data.regions[0].tenants[0].accounts[0].AccountName + ' ' + data.regions[0].tenants[0].accounts[0].AccountId + '</p>';
-    $(htmlHead).appendTo('#mainContainer .fd-panel__head');
+    htmlHeader = '<h3 class="fd-panel__title">' + SelectedItemType + '</h3>';
+    htmlHeader += '<p class="fd-panel__description">' + SelectedItemName + ' ' + SelectedItemId + '</p>';
+    $(htmlHeader).appendTo('#mainContainer .fd-panel__head');
 
     //Panel Body - Filters
-    $.each(data.regions[0].tenants[0].accounts[0].AccountTags, function () {
+    $.each(SelectedItemTags, function () {
         var htmlItem;
 
         htmlItem = '<span class="fd-badge fd-badge--pill fd-has-margin-right-tiny">' + this.label + '</span>';
@@ -14,7 +26,7 @@ function mainContainerJSON(data) {
     });
 
     //Panel Body - content
-    $.each(data.regions[0].tenants[0].accounts[0].AccountObjects, function (i) {
+    $.each(SelectedItemObjects, function (i) {
         //Panel Body - Tabs
         var tabItem;
 
@@ -59,7 +71,7 @@ function mainContainerJSON(data) {
         });
 
         //Panel Body - Table rows
-        $.each(data.regions[0].tenants[0].accounts[0].AccountObjects[i].items, function (j) {
+        $.each(data.regions[0].tenants[0].accounts[0].AccountObjects[i].items, function () {
             var trItem;
 
             trItem = '<tr class="fd-table__row tr-' + this.id + '">';
@@ -69,58 +81,44 @@ function mainContainerJSON(data) {
     });
 
     //Panel Body - Table cells (Tab 1)
-    $.each(data.regions[0].tenants[0].accounts[0].AccountObjects[0].items, function (j) {
+    $.each(SelectedItemObjectsTab1, function (j) {
         var tdItem;
 
         tdItem = ' <td class="fd-table__cell">';
         tdItem += '     <span class="fd-identifier fd-identifier--s fd-identifier--circle sap-icon--database" role="presentation"></span>';
         tdItem += ' </td>';
-        tdItem += ' <td class="fd-table__cell">' + data.regions[0].tenants[0].accounts[0].AccountObjects[0].items[j].name + '</td>';
-        tdItem += ' <td class="fd-table__cell">' + data.regions[0].tenants[0].accounts[0].AccountObjects[0].items[j].type + '</td>';
-        tdItem += ' <td class="fd-table__cell">' + data.regions[0].tenants[0].accounts[0].AccountObjects[0].items[j].user + '</td>';
-        tdItem += ' <td class="fd-table__cell">' + data.regions[0].tenants[0].accounts[0].AccountObjects[0].items[j].date + '</td>';
-        $(tdItem).appendTo('#mainContainer #tab' + data.regions[0].tenants[0].accounts[0].AccountObjects[0].id + ' .tr-' + data.regions[0].tenants[0].accounts[0].AccountObjects[0].items[j].id);
+        tdItem += ' <td class="fd-table__cell">' + this.name + '</td>';
+        tdItem += ' <td class="fd-table__cell">' + this.type + '</td>';
+        tdItem += ' <td class="fd-table__cell">' + this.user + '</td>';
+        tdItem += ' <td class="fd-table__cell">' + this.date + '</td>';
+        $(tdItem).appendTo('#mainContainer #tab' + SelectedItemObjectsTab1Id + ' .tr-' + this.id);
     });
 
     //Panel Body - Table cells (Tab 2)
-    $.each(data.regions[0].tenants[0].accounts[0].AccountObjects[1].items, function (j) {
+    $.each(SelectedItemObjectsTab2, function () {
         var tdItem;
 
         tdItem = ' <td class="fd-table__cell">';
         tdItem += '     <span class="fd-identifier fd-identifier--s fd-identifier--circle sap-icon--database" role="presentation"></span>';
         tdItem += ' </td>';
-        tdItem += ' <td class="fd-table__cell">' + data.regions[0].tenants[0].accounts[0].AccountObjects[1].items[j].name + '</td>';
-        tdItem += ' <td class="fd-table__cell">' + data.regions[0].tenants[0].accounts[0].AccountObjects[1].items[j].type + '</td>';
-        tdItem += ' <td class="fd-table__cell">' + data.regions[0].tenants[0].accounts[0].AccountObjects[1].items[j].author + '</td>';
-        tdItem += ' <td class="fd-table__cell">' + data.regions[0].tenants[0].accounts[0].AccountObjects[1].items[j].date + '</td>';
-        $(tdItem).appendTo('#mainContainer #tab' + data.regions[0].tenants[0].accounts[0].AccountObjects[1].id + ' .tr-' + data.regions[0].tenants[0].accounts[0].AccountObjects[1].items[j].id);
+        tdItem += ' <td class="fd-table__cell">' + this.name + '</td>';
+        tdItem += ' <td class="fd-table__cell">' + this.type + '</td>';
+        tdItem += ' <td class="fd-table__cell">' + this.author + '</td>';
+        tdItem += ' <td class="fd-table__cell">' + this.date + '</td>';
+        $(tdItem).appendTo('#mainContainer #tab' + SelectedItemObjectsTab2Id + ' .tr-' + this.id);
     });
 
     //Panel Body - Table cells (Tab 3)
-    $.each(data.regions[0].tenants[0].accounts[0].AccountObjects[2].items, function (j) {
+    $.each(SelectedItemObjectsTab3, function () {
         var tdItem;
 
         tdItem = ' <td class="fd-table__cell">';
         tdItem += '     <span class="fd-identifier fd-identifier--s fd-identifier--circle sap-icon--database" role="presentation"></span>';
         tdItem += ' </td>';
-        tdItem += ' <td class="fd-table__cell">' + data.regions[0].tenants[0].accounts[0].AccountObjects[2].items[j].name + '</td>';
-        tdItem += ' <td class="fd-table__cell">' + data.regions[0].tenants[0].accounts[0].AccountObjects[2].items[j].type + '</td>';
-        tdItem += ' <td class="fd-table__cell">' + data.regions[0].tenants[0].accounts[0].AccountObjects[2].items[j].organisation + '</td>';
-        tdItem += ' <td class="fd-table__cell">' + data.regions[0].tenants[0].accounts[0].AccountObjects[2].items[j].date + '</td>';
-        $(tdItem).appendTo('#mainContainer #tab' + data.regions[0].tenants[0].accounts[0].AccountObjects[2].id + ' .tr-' + data.regions[0].tenants[0].accounts[0].AccountObjects[2].items[j].id);
-    });
-}
-
-function getData(customPath) {
-    $.ajax({
-        dataType: "json",
-        url: customPath + '/src/json/leftSidebar.min.json',
-        success: mainContainerJSON,
-        error: function () {
-            console.log('No left sidebar JSON found.');
-        },
-        complete: function () {
-            console.log('Left sidebar JSON loaded.');
-        }
+        tdItem += ' <td class="fd-table__cell">' + this.name + '</td>';
+        tdItem += ' <td class="fd-table__cell">' + this.type + '</td>';
+        tdItem += ' <td class="fd-table__cell">' + this.organisation + '</td>';
+        tdItem += ' <td class="fd-table__cell">' + this.date + '</td>';
+        $(tdItem).appendTo('#mainContainer #tab' + SelectedItemObjectsTab3Id + ' .tr-' + this.id);
     });
 }
