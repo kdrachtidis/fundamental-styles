@@ -1,12 +1,17 @@
-function rightSidebarJSON(data){
-     //Panel Head
-     var htmlHead;
-     htmlHead = '<h3 class="fd-panel__title">' + data.title + '</h3>';
-     htmlHead += '<p class="fd-panel__description">' + data.description + '</p>';
-     $(htmlHead).appendTo('#rightSidebar .fd-panel__head');
-    
+function rightSidebarJSON(data) {
+    var htmlHeader;
+    var htmlFooter;
+    var SelectedItemType = data.FifthLevelContent;
+    var SelectedItemGroup = data.regions[0].tenants[0].accounts[0].AccountResources;
+    var SelectedItemGroupLength = data.regions[0].tenants[0].accounts[0].AccountResources.length;
+
+    //Panel Head
+    htmlHeader = '<h3 class="fd-panel__title">' + SelectedItemType + '</h3>';
+    htmlHeader += '<p class="fd-panel__description">All ' + SelectedItemType + '</p>';
+    $(htmlHeader).appendTo('#rightSidebar .fd-panel__head');
+
     //Panel Body - List
-    $.each(data.items, function () {
+    $.each(SelectedItemGroup, function () {
         var htmlItem;
 
         htmlItem = '<div class="fd-tile">';
@@ -39,5 +44,6 @@ function rightSidebarJSON(data){
     });
 
     //Panel Body - Panel footer
-    $("#rightSidebar .fd-panel__footer").append(data.items.length + " resources available.");
+    htmlFooter = SelectedItemGroupLength + " resources available.";
+    $("#rightSidebar .fd-panel__footer").append(htmlFooter);
 }

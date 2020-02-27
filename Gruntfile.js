@@ -34,31 +34,12 @@ module.exports = function (grunt) {
             buildScript: {
                 src: ['sources/script/*.js'],
                 dest: 'docs/src/js/script.min.js'
-            }, buildRightSidebar: {
-                src: ['sources/script/importRightSidebar.js'],
-                dest: 'docs/src/js/importRightSidebar.min.js'
-            }, buildLeftSidebar: {
-                src: ['sources/script/importLeftSidebar.js'],
-                dest: 'docs/src/js/importLeftSidebar.min.js'
-            }, buildRightContainer: {
-                src: ['sources/script/importRightContainer.js'],
-                dest: 'docs/src/js/importRightContainer.min.js'
-            }, buildLeftContainer: {
-                src: ['sources/script/importLeftContainer.js'],
-                dest: 'docs/src/js/importLeftContainer.min.js'
-            }, buildMainContainer: {
-                src: ['sources/script/importMainContainer.js'],
-                dest: 'docs/src/js/importMainContainer.min.js'
-            }, buildInteraction: {
-                src: ['sources/script/tabsInteraction.js'],
-                dest: 'docs/src/js/tabsInteraction.min.js'
             }
         },
         minjson: {
             build: {
                 files: {
-                    'docs/src/json/ContentData.min.json': 'sources/content/ContentData.json',
-                    'docs/src/json/rightSidebar.min.json': 'sources/content/rightSidebar.json'
+                    'docs/src/json/ContentData.min.json': 'sources/content/ContentData.json'
                 }
             }
         }
