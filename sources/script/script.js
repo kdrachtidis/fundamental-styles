@@ -1,7 +1,7 @@
 function getData(customPath) {
     $.ajax({
         dataType: "json",
-        url: customPath + '/src/json/leftSidebar.min.json',
+        url: customPath + '/src/json/ContentData.min.json',
         success: getJSON,
         error: function () {
             console.log('No left sidebar JSON found.');

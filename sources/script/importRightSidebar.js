@@ -41,17 +41,3 @@ function rightSidebarJSON(data){
     //Panel Body - Panel footer
     $("#rightSidebar .fd-panel__footer").append(data.items.length + " resources available.");
 }
-
-function getRightSidebarData(customPath){
-    $.ajax({
-        dataType: "json",
-        url: customPath + '/src/json/rightSidebar.min.json',
-        success: rightSidebarJSON,
-        error: function(){
-            console.log('No right sidebar JSON found.');
-        },
-        complete: function(){
-            console.log('Right sidebar JSON loaded.');
-        }
-    });
-}

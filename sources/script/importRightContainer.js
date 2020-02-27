@@ -1,12 +1,17 @@
 function rightContainerJSON(data) {
+    var htmlHeader;
+    var htmlFooter;
+    var SelectedItemGroup = data.regions[0].tenants[0].accounts[0].AccountNotifications;
+    var SelectedItemType = data.FourthLevelContent;
+    var SelectedItemGroupLength = data.regions[0].tenants[0].accounts[0].AccountNotifications.length;
+
     //Panel Head
-    var htmlHead;
-    htmlHead = '<h3 class="fd-panel__title">' + data.title + '</h3>';
-    htmlHead += '<p class="fd-panel__description">' + data.description + '</p>';
-    $(htmlHead).appendTo('#rightContainer .fd-panel__head');
+    htmlHeader = '<h3 class="fd-panel__title">' + SelectedItemType + '</h3>';
+    htmlHeader += '<p class="fd-panel__description">All ' + SelectedItemType + '</p>';
+    $(htmlHeader).appendTo('#rightContainer .fd-panel__head');
     
     //Panel Body - list
-    $(data.items).each(function () {
+    $.each(SelectedItemGroup, function () {
         var htmlItem;
 
         htmlItem = '<div class="fd-notification fd-notification--' + this.state + ' fd-notification--m">';
@@ -29,19 +34,6 @@ function rightContainerJSON(data) {
     });
 
      //Panel Footer
-     $("#rightContainer .fd-panel__footer").append(data.items.length + " items loaded successfully.");
-}
-
-function getRightContainerData(customPath) {
-    $.ajax({
-        dataType: "json",
-        url: customPath + '/src/json/rightContainer.min.json',
-        success: rightContainerJSON,
-        error: function () {
-            console.log('No right container JSON found.');
-        },
-        complete: function () {
-            console.log('Right container JSON loaded.');
-        }
-    });
+     htmlFooter = SelectedItemGroupLength + " items loaded successfully.";
+     $("#rightContainer .fd-panel__footer").append(htmlFooter);
 }

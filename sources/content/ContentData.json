@@ -2,6 +2,8 @@
     "FirstLevelContent": "Tenants",
     "SecondLevelContent": "Accounts",
     "ThirdLevelContent": "Account",
+    "FourthLevelContent": "Notifications",
+    "ItemType": "Regions",
     "regions": [
         {
             "RegionName": "Group of tenants",

@@ -1,8 +1,9 @@
 function leftSidebarJSON(data) {
     var htmlHeader;
     var htmlFooter;
+    var SelectedItemGroup = data.regions;
     var SelectedItemType = data.FirstLevelContent;
-    var SelectedItemTypeCount = data.regions.length;
+    var SelectedItemGroupLength = data.regions.length;
 
     //Panel Head
     htmlHeader = '<h3 class="fd-panel__title">' + SelectedItemType + '</h3>';
@@ -10,7 +11,7 @@ function leftSidebarJSON(data) {
     $(htmlHeader).appendTo('#leftSidebar .fd-panel__head');
 
     //Panel Body - List
-    $.each(data.regions, function (i) {
+    $.each(SelectedItemGroup, function (i) {
         var htmlItem;
 
         htmlItem = '<li class="fd-list__group-header" id="group-' + this.RegionId + '">' + this.RegionName + ' ' + this.RegionId + ' (' + this.tenants.length + ' items)</li>';
@@ -27,6 +28,6 @@ function leftSidebarJSON(data) {
     });
 
     //Panel Body - List footer
-    htmlFooter = '<li class="fd-list__footer">' + SelectedItemTypeCount + ' groups of ' + SelectedItemType + ' loaded.</li>';
+    htmlFooter = '<li class="fd-list__footer">' + SelectedItemGroupLength + ' groups of ' + SelectedItemType + ' loaded.</li>';
     $('#leftSidebar .fd-list').append(htmlFooter);
 }

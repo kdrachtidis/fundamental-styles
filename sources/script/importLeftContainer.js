@@ -3,8 +3,9 @@ function leftContainerJSON(data) {
     var htmlFooter;
     var SelectedParentItemName = data.regions[0].tenants[0].TenantName;
     var SelectedParentItemId = data.regions[0].tenants[0].TenantId;
+    var SelectedItemGroup = data.regions[0].tenants[0].accounts;
     var SelectedItemType = data.SecondLevelContent;
-    var SelectedItemTypeCount = data.regions[0].tenants[0].accounts.length;
+    var SelectedItemGroupLength = data.regions[0].tenants[0].accounts.length;
 
     //Panel Head
     htmlHeader = '<h3 class="fd-panel__title">' + SelectedItemType + '</h3>';
@@ -12,7 +13,7 @@ function leftContainerJSON(data) {
     $(htmlHeader).appendTo('#leftContainer .fd-panel__head');
 
     //Panel Body - List
-    $.each(data.regions[0].tenants[0].accounts, function () {
+    $.each(SelectedItemGroup, function () {
         var htmlItem;
 
         htmlItem = '<li class="fd-list__item">';
@@ -23,6 +24,6 @@ function leftContainerJSON(data) {
     });
 
     //Panel Body - List footer
-    htmlFooter = '<li class="fd-list__footer">' + SelectedItemTypeCount + '&nbsp;' + SelectedItemType + ' loaded successfully.</li>';
+    htmlFooter = '<li class="fd-list__footer">' + SelectedItemGroupLength + '&nbsp;' + SelectedItemType + ' loaded successfully.</li>';
     $('#leftContainer .fd-list').append(htmlFooter);
 }

@@ -57,9 +57,7 @@ module.exports = function (grunt) {
         minjson: {
             build: {
                 files: {
-                    'docs/src/json/leftSidebar.min.json': 'sources/content/leftSidebar.json',
-                    'docs/src/json/mainContainer.min.json': 'sources/content/mainContainer.json',
-                    'docs/src/json/rightContainer.min.json': 'sources/content/rightContainer.json',
+                    'docs/src/json/ContentData.min.json': 'sources/content/ContentData.json',
                     'docs/src/json/rightSidebar.min.json': 'sources/content/rightSidebar.json'
                 }
             }
