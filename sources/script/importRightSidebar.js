@@ -44,6 +44,6 @@ function rightSidebarJSON(data) {
     });
 
     //Panel Body - Panel footer
-    htmlFooter = SelectedItemGroupLength + " resources available.";
+    htmlFooter = SelectedItemGroupLength + " items available.";
     $("#rightSidebar .fd-panel__footer").append(htmlFooter);
 }
