@@ -49,6 +49,9 @@ module.exports = function (grunt) {
             }, buildMainContainer: {
                 src: ['sources/script/importMainContainer.js'],
                 dest: 'docs/src/js/importMainContainer.min.js'
+            }, buildInteraction: {
+                src: ['sources/script/tabsInteraction.js'],
+                dest: 'docs/src/js/tabsInteraction.min.js'
             }
         },
         minjson: {

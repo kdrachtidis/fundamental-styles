@@ -14,7 +14,19 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <script type="text/javascript" src="src/js/script.min.js"></script>
+    <script src="src/js/script.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.when(getStructure()).done(function () {
+                //getLeftSidebarData('.');
+                //getLeftContainerData('.');
+                //getMainContainerData('.');
+                getData('.');
+                //getRightContainerData('.');
+                //getRightSidebarData('.');
+            });
+        });
+    </script>
 </head>
 
 <body class="fd-has-margin-none">
