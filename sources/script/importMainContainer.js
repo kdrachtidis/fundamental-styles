@@ -5,12 +5,12 @@ function mainContainerJSON(data) {
     var SelectedItemTags = data.regions[0].tenants[0].accounts[0].AccountTags;
     var SelectedItemType = data.ThirdLevelContent;
     var SelectedItemObjects = data.regions[0].tenants[0].accounts[0].AccountObjects;
-    var SelectedItemObjectsTab1 = data.regions[0].tenants[0].accounts[0].AccountObjects[0].items;
-    var SelectedItemObjectsTab2 = data.regions[0].tenants[0].accounts[0].AccountObjects[1].items;
-    var SelectedItemObjectsTab3 = data.regions[0].tenants[0].accounts[0].AccountObjects[2].items;
-    var SelectedItemObjectsTab1Id = data.regions[0].tenants[0].accounts[0].AccountObjects[0].id;
-    var SelectedItemObjectsTab2Id = data.regions[0].tenants[0].accounts[0].AccountObjects[1].id;
-    var SelectedItemObjectsTab3Id = data.regions[0].tenants[0].accounts[0].AccountObjects[2].id;
+    var SelectedItemObjectsTab1 = data.regions[0].tenants[0].accounts[0].AccountObjects[0].AccountObjectItems;
+    var SelectedItemObjectsTab2 = data.regions[0].tenants[0].accounts[0].AccountObjects[1].AccountObjectItems;
+    var SelectedItemObjectsTab3 = data.regions[0].tenants[0].accounts[0].AccountObjects[2].AccountObjectItems;
+    var SelectedItemObjectsTab1Id = data.regions[0].tenants[0].accounts[0].AccountObjects[0].AccountObjectId;
+    var SelectedItemObjectsTab2Id = data.regions[0].tenants[0].accounts[0].AccountObjects[1].AccountObjectId;
+    var SelectedItemObjectsTab3Id = data.regions[0].tenants[0].accounts[0].AccountObjects[2].AccountObjectId;
 
     //Panel Head
     htmlHeader = '<h3 class="fd-panel__title">' + SelectedItemType + '</h3>';
@@ -31,16 +31,16 @@ function mainContainerJSON(data) {
         var tabItem;
 
         tabItem = '<li class="fd-tabs__item">';
-        tabItem += '   <a class="fd-tabs__link link-' + this.id + '" aria-controls="tab' + this.id + '" aria-selected=' + this.expanded + ' href="#tab' + this.id + '" role="tab" onclick="clickTab' + this.id + '()">';
-        tabItem += '       <p class="fd-tabs__count">' + this.items.length + '</p>';
-        tabItem += '       <span class="fd-tabs__tag">' + this.name + '</span>';
+        tabItem += '   <a class="fd-tabs__link link-' + this.AccountObjectId + '" aria-controls="tab' + this.AccountObjectId + '" aria-selected=' + this.AccountObjectTypeExpanded + ' href="#tab' + this.AccountObjectId + '" role="tab" onclick="clickTab' + this.AccountObjectId + '()">';
+        tabItem += '       <p class="fd-tabs__count">' + this.AccountObjectItems.length + '</p>';
+        tabItem += '       <span class="fd-tabs__tag">' + this.AccountObjectType + '</span>';
         tabItem += '   </a>';
         tabItem += '</li>';
         $(tabItem).appendTo('.fd-tabs');
 
         var panelItem;
 
-        panelItem = '<div class="fd-tabs__panel" aria-expanded="' + this.expanded + '" id="tab' + this.id + '" role="tabpanel">';
+        panelItem = '<div class="fd-tabs__panel" aria-expanded="' + this.AccountObjectTypeExpanded + '" id="tab' + this.AccountObjectId + '" role="tabpanel">';
         panelItem += '</div>';
         $(panelItem).appendTo('#mainContainer .fd-panel__body');
 
@@ -56,27 +56,25 @@ function mainContainerJSON(data) {
         tableItem += '   </tbody>';
         tableItem += '</table>';
 
-        $(tableItem).appendTo('#mainContainer #tab' + this.id);
+        $(tableItem).appendTo('#mainContainer #tab' + this.AccountObjectId);
 
         //Panel Body - Table heads
-        $.each(data.regions[0].tenants[0].accounts[0].AccountObjects[i].labels, function () {
+        $.each(data.regions[0].tenants[0].accounts[0].AccountObjects[i].AccountObjectLabels, function (j) {
             var thItem;
 
-            thItem = '<th class="fd-table__cell" scope="col"></th>';
-            thItem += '<th class="fd-table__cell" scope="col">' + this.label2 + '</th>';
-            thItem += '<th class="fd-table__cell" scope="col">' + this.label3 + '</th>';
-            thItem += '<th class="fd-table__cell" scope="col">' + this.label4 + '</th>';
-            thItem += '<th class="fd-table__cell" scope="col">' + this.label5 + '</th>';
-            $(thItem).appendTo('#mainContainer #tab' + data.regions[0].tenants[0].accounts[0].AccountObjects[i].id + ' table thead tr');
+            thItem = '<th class="fd-table__cell" scope="col">';
+            thItem +=   data.regions[0].tenants[0].accounts[0].AccountObjects[i].AccountObjectLabels[j].AccountObjectItemLabel;
+            thItem += '</th>';
+            $(thItem).appendTo('#mainContainer #tab' + data.regions[0].tenants[0].accounts[0].AccountObjects[i].AccountObjectId + ' table thead tr');
         });
 
         //Panel Body - Table rows
-        $.each(data.regions[0].tenants[0].accounts[0].AccountObjects[i].items, function () {
+        $.each(data.regions[0].tenants[0].accounts[0].AccountObjects[i].AccountObjectItems, function () {
             var trItem;
 
-            trItem = '<tr class="fd-table__row tr-' + this.id + '">';
+            trItem = '<tr class="fd-table__row tr-' + this.AccountObjectItemId + '">';
             trItem += '</tr>';
-            $(trItem).appendTo('#mainContainer #tab' + data.regions[0].tenants[0].accounts[0].AccountObjects[i].id + ' table tbody');
+            $(trItem).appendTo('#mainContainer #tab' + data.regions[0].tenants[0].accounts[0].AccountObjects[i].AccountObjectId + ' table tbody');
         });
     });
 
@@ -85,13 +83,15 @@ function mainContainerJSON(data) {
         var tdItem;
 
         tdItem = ' <td class="fd-table__cell">';
-        tdItem += '     <span class="fd-identifier fd-identifier--s fd-identifier--circle sap-icon--database" role="presentation"></span>';
+        tdItem += '     <span class="fd-identifier fd-identifier--s fd-identifier--circle sap-icon--' + this.AccountObjectItemIcon + '" role="presentation"></span>';
         tdItem += ' </td>';
-        tdItem += ' <td class="fd-table__cell">' + this.name + '</td>';
-        tdItem += ' <td class="fd-table__cell">' + this.type + '</td>';
-        tdItem += ' <td class="fd-table__cell">' + this.user + '</td>';
-        tdItem += ' <td class="fd-table__cell">' + this.date + '</td>';
-        $(tdItem).appendTo('#mainContainer #tab' + SelectedItemObjectsTab1Id + ' .tr-' + this.id);
+        tdItem += ' <td class="fd-table__cell">' + this.AccountObjectItemName + '</td>';
+        tdItem += ' <td class="fd-table__cell">' + this.AccountObjectItemType + '</td>';
+        tdItem += ' <td class="fd-table__cell">' + this.AccountObjectItemId + '</td>';
+        tdItem += ' <td class="fd-table__cell">' + this.AccountObjectItemAddress + '</td>';
+        tdItem += ' <td class="fd-table__cell">' + this.AccountObjectItemAuthor + '</td>';
+        tdItem += ' <td class="fd-table__cell">' + this.AccountObjectItemDate + '</td>';
+        $(tdItem).appendTo('#mainContainer #tab' + SelectedItemObjectsTab1Id + ' .tr-' + this.AccountObjectItemId);
     });
 
     //Panel Body - Table cells (Tab 2)
@@ -99,13 +99,14 @@ function mainContainerJSON(data) {
         var tdItem;
 
         tdItem = ' <td class="fd-table__cell">';
-        tdItem += '     <span class="fd-identifier fd-identifier--s fd-identifier--circle sap-icon--database" role="presentation"></span>';
+        tdItem += '     <span class="fd-identifier fd-identifier--s fd-identifier--circle sap-icon--' + this.AccountObjectItemIcon + '" role="presentation"></span>';
         tdItem += ' </td>';
-        tdItem += ' <td class="fd-table__cell">' + this.name + '</td>';
-        tdItem += ' <td class="fd-table__cell">' + this.type + '</td>';
-        tdItem += ' <td class="fd-table__cell">' + this.author + '</td>';
-        tdItem += ' <td class="fd-table__cell">' + this.date + '</td>';
-        $(tdItem).appendTo('#mainContainer #tab' + SelectedItemObjectsTab2Id + ' .tr-' + this.id);
+        tdItem += ' <td class="fd-table__cell">' + this.AccountObjectItemName + '</td>';
+        tdItem += ' <td class="fd-table__cell">' + this.AccountObjectItemId + '</td>';
+        tdItem += ' <td class="fd-table__cell">' + this.AccountObjectItemType + '</td>';
+        tdItem += ' <td class="fd-table__cell">' + this.AccountObjectItemAuthor + '</td>';
+        tdItem += ' <td class="fd-table__cell">' + this.AccountObjectItemDate + '</td>';
+        $(tdItem).appendTo('#mainContainer #tab' + SelectedItemObjectsTab2Id + ' .tr-' + this.AccountObjectItemId);
     });
 
     //Panel Body - Table cells (Tab 3)
@@ -113,12 +114,13 @@ function mainContainerJSON(data) {
         var tdItem;
 
         tdItem = ' <td class="fd-table__cell">';
-        tdItem += '     <span class="fd-identifier fd-identifier--s fd-identifier--circle sap-icon--database" role="presentation"></span>';
+        tdItem += '     <span class="fd-identifier fd-identifier--s fd-identifier--circle sap-icon--' + this.AccountObjectItemIcon + '" role="presentation"></span>';
         tdItem += ' </td>';
-        tdItem += ' <td class="fd-table__cell">' + this.name + '</td>';
-        tdItem += ' <td class="fd-table__cell">' + this.type + '</td>';
-        tdItem += ' <td class="fd-table__cell">' + this.organisation + '</td>';
-        tdItem += ' <td class="fd-table__cell">' + this.date + '</td>';
-        $(tdItem).appendTo('#mainContainer #tab' + SelectedItemObjectsTab3Id + ' .tr-' + this.id);
+        tdItem += ' <td class="fd-table__cell">' + this.AccountObjectItemName + '</td>';
+        tdItem += ' <td class="fd-table__cell">' + this.AccountObjectItemId + '</td>';
+        tdItem += ' <td class="fd-table__cell">' + this.AccountObjectItemType + '</td>';
+        tdItem += ' <td class="fd-table__cell">' + this.AccountObjectItemAuthor + '</td>';
+        tdItem += ' <td class="fd-table__cell">' + this.AccountObjectItemDate + '</td>';
+        $(tdItem).appendTo('#mainContainer #tab' + SelectedItemObjectsTab3Id + ' .tr-' + this.AccountObjectItemId);
     });
 }
