@@ -1,26 +1,24 @@
-function rightSidebarJSON(data) {
-    var htmlHeader;
-    var htmlFooter;
-    var SelectedItemType = data.FifthLevelContent;
-    var SelectedItemGroup = data.regions[0].tenants[0].accounts[0].AccountResources;
-    var SelectedItemGroupLength = data.regions[0].tenants[0].accounts[0].AccountResources.length;
-
+function buildRightSidebar(data) {
     //Panel Head
-    htmlHeader = '<h3 class="fd-panel__title">' + SelectedItemType + '</h3>';
-    htmlHeader += '<p class="fd-panel__description">All ' + SelectedItemType + '</p>';
-    $(htmlHeader).appendTo('#rightSidebar .fd-panel__head');
+    var htmlHeader, htmlHeaderContainer;
+
+    htmlHeader = '<h3 class="fd-panel__title">' + data.FifthLevelContent + '</h3>';
+    htmlHeader += '<p class="fd-panel__description">' + data.FifthLevelContent + ' for ' + data.regions[0].RegionItems[0].TenantItems[0].AccountName + ' [' + data.regions[0].RegionItems[0].TenantItems[0].AccountId + ']</p>';
+    htmlHeaderContainer = '#rightSidebar .fd-panel__head';
+
+    $(htmlHeader).appendTo(htmlHeaderContainer);
 
     //Panel Body - List
-    $.each(SelectedItemGroup, function () {
-        var htmlItem;
+    $.each(data.regions[0].RegionItems[0].TenantItems[0].AccountResources, function () {
+        var htmlItem, htmlItemContainer;
 
         htmlItem = '<div class="fd-tile">';
         htmlItem += '   <div class="fd-tile__media">';
-        htmlItem += '       <span class="fd-identifier fd-identifier--m sap-icon--' + this.icon + ' fd-identifier--transparent"></span>';
+        htmlItem += '       <span class="fd-identifier fd-identifier--m sap-icon--' + this.AccountResourceIcon + ' fd-identifier--transparent"></span>';
         htmlItem += '   </div>';
         htmlItem += '   <div class="fd-tile__content">';
-        htmlItem += '       <h3 class="fd-tile__title">' + this.header + '</h3>';
-        htmlItem += '       <p class="fd-tile__text">' + this.description + '</p>';
+        htmlItem += '       <h3 class="fd-tile__title">' + this.AccountResourceName + ' [' + this.AccountResourceId + ']</h3>';
+        htmlItem += '       <p class="fd-tile__text">' + this.AccountResourceLink + '</p>';
         htmlItem += '   </div>';
         htmlItem += '   <div class="fd-tile__actions">';
         htmlItem += '       <div class="fd-popover fd-popover--right">';
@@ -39,11 +37,16 @@ function rightSidebarJSON(data) {
         htmlItem += '       </div>';
         htmlItem += '   </div>';
         htmlItem += '</div>';
+        htmlItemContainer = '#rightSidebar .fd-panel__body';
 
-        $(htmlItem).appendTo("#rightSidebar .fd-panel__body");
+        $(htmlItem).appendTo(htmlItemContainer);
     });
 
     //Panel Body - Panel footer
-    htmlFooter = SelectedItemGroupLength + " items available.";
-    $("#rightSidebar .fd-panel__footer").append(htmlFooter);
+    var htmlFooter, htmlFooterContainer;
+
+    htmlFooter = data.regions[0].RegionItems[0].TenantItems[0].AccountResources.length + ' ' + data.FifthLevelContent + " available.";
+    htmlFooterContainer = '#rightSidebar .fd-panel__footer';
+
+    $(htmlFooterContainer).append(htmlFooter);
 }

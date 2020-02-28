@@ -2,7 +2,7 @@ function getData(customPath) {
     $.ajax({
         dataType: "json",
         url: customPath + '/src/json/ContentData.min.json',
-        success: getJSON,
+        success: buildContainers,
         error: function () {
             console.log('No left sidebar JSON found.');
         },
@@ -12,10 +12,10 @@ function getData(customPath) {
     });
 }
 
-function getJSON(data){
-    leftSidebarJSON(data);
-    leftContainerJSON(data);
-    mainContainerJSON(data);
-    rightContainerJSON(data);
-    rightSidebarJSON(data);
+function buildContainers(data){
+    buildLeftSidebar(data);
+    buildLeftContainer(data);
+    buildMainContainer(data);
+    buildRightContainer(data);
+    buildRightSidebar(data);
 }
