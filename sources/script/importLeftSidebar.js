@@ -1,21 +1,21 @@
 function buildLeftSidebar(data) {
     var SelectedChildItemGroupLength = 0;
 
-    for (i = 0; i < data.regions.length; i++) {
-        SelectedChildItemGroupLength += data.regions[i].RegionItems.length;
+    for (i = 0; i < data.items.length; i++) {
+        SelectedChildItemGroupLength += data.items[i].RegionItems.length;
     }
 
     //Panel Head
     var htmlHeader, htmlHeaderContainer;
     
-    htmlHeader = '<h3 class="fd-panel__title">' + data.FirstLevelContent + '</h3>';
-    htmlHeader += '<p class="fd-panel__description">All ' + SelectedChildItemGroupLength + ' ' + data.FirstLevelContent + '</p>';
+    htmlHeader = '<h3 class="fd-panel__title">' + data.items[0].RegionItems[0].TenantObjectType + '</h3>';
+    htmlHeader += '<p class="fd-panel__description">All ' + SelectedChildItemGroupLength + ' ' + data.items[0].RegionItems[0].TenantObjectType + 's</p>';
     htmlHeaderContainer = '#leftSidebar .fd-panel__head';
     
     $(htmlHeader).appendTo(htmlHeaderContainer);
 
     //Panel Body - List
-    $.each(data.regions, function (i) {
+    $.each(data.items, function (i) {
         var htmlItem, htmlItemContainer;
         
         htmlItem = '<li class="fd-list__group-header" id="group-' + this.RegionId + '">' + this.RegionName + ' (' + this.RegionItems.length + ' items)</li>';
@@ -23,13 +23,13 @@ function buildLeftSidebar(data) {
         
         $(htmlItem).appendTo(htmlItemContainer);
 
-        $.each(data.regions[i].RegionItems, function () {
+        $.each(data.items[i].RegionItems, function () {
             var htmlItem, htmlItemContainer;
 
             htmlItem = '<li class="fd-list__item">';
             htmlItem += '   <span class="fd-list__title">' + this.TenantName + '</span>';
             htmlItem += '</li>';
-            htmlItemContainer = '#leftSidebar #group-' + data.regions[i].RegionId;
+            htmlItemContainer = '#leftSidebar #group-' + data.items[i].RegionId;
             
             $(htmlItem).insertAfter(htmlItemContainer);
         });
@@ -38,7 +38,7 @@ function buildLeftSidebar(data) {
     //Panel Body - List footer
     var htmlFooter, htmlFooterContainer;
 
-    htmlFooter = '<li class="fd-list__footer">' + data.regions.length + ' ' + data.ItemType + ' with ' + data.FirstLevelContent + ' loaded.</li>';
+    htmlFooter = '<li class="fd-list__footer">' + data.items.length + ' ' + data.items[0].RegionObjectType + 's with ' + SelectedChildItemGroupLength + ' ' + data.items[0].RegionItems[0].TenantObjectType + 's loaded.</li>';
     htmlFooterContainer = '#leftSidebar .fd-list';
 
     $(htmlFooterContainer).append(htmlFooter);

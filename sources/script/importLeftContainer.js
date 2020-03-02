@@ -2,14 +2,14 @@ function buildLeftContainer(data) {
     //Panel Head
     var htmlHeader, htmlHeaderContainer;
     
-    htmlHeader = '<h3 class="fd-panel__title">' + data.SecondLevelContent + '</h3>';
-    htmlHeader += '<p class="fd-panel__description">' + data.regions[0].RegionItems[0].TenantName + ' [' + data.regions[0].RegionItems[0].TenantId + ']</p>';
+    htmlHeader = '<h3 class="fd-panel__title">' + data.items[0].RegionItems[0].TenantItems[0].AccountObjectType + 's</h3>';
+    htmlHeader += '<p class="fd-panel__description">' + data.items[0].RegionItems[0].TenantName + ' [' + data.items[0].RegionItems[0].TenantId + ']</p>';
     htmlHeaderContainer = '#leftContainer .fd-panel__head';
 
     $(htmlHeader).appendTo(htmlHeaderContainer);
 
     //Panel Body - List
-    $.each(data.regions[0].RegionItems[0].TenantItems, function () {
+    $.each(data.items[0].RegionItems[0].TenantItems, function () {
         var htmlItem, htmlItemContainer;
 
         htmlItem = '<li class="fd-list__item">';
@@ -25,7 +25,7 @@ function buildLeftContainer(data) {
     var htmlFooter, htmlFooterContainer;
     
     htmlFooter = '<li class="fd-list__footer">';
-    htmlFooter +=   data.regions[0].RegionItems[0].TenantItems.length + '&nbsp;' + data.SecondLevelContent + ' loaded successfully.';
+    htmlFooter +=   data.items[0].RegionItems[0].TenantItems.length + '&nbsp;' + data.items[0].RegionItems[0].TenantItems[0].AccountObjectType + 's loaded successfully.';
     htmlFooter += '</li>';
     htmlFooterContainer = '#leftContainer .fd-list';
 

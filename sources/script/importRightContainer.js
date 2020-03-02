@@ -2,14 +2,14 @@ function buildRightContainer(data) {
     //Panel Head
     var htmlHeader, htmlHeaderContainer;
 
-    htmlHeader = '<h3 class="fd-panel__title">' + data.FourthLevelContent + '</h3>';
-    htmlHeader += '<p class="fd-panel__description">' + data.FourthLevelContent + ' for ' + data.regions[0].RegionItems[0].TenantItems[0].AccountName + ' [' + data.regions[0].RegionItems[0].TenantItems[0].AccountId + ']</p>';
+    htmlHeader = '<h3 class="fd-panel__title">' + data.items[0].RegionItems[0].TenantItems[0].AccountNotifications[0].AccountNotificationType + 's</h3>';
+    htmlHeader += '<p class="fd-panel__description">' + data.items[0].RegionItems[0].TenantItems[0].AccountName + ' [' + data.items[0].RegionItems[0].TenantItems[0].AccountId + ']</p>';
     htmlHeaderContainer = '#rightContainer .fd-panel__head';
     
     $(htmlHeader).appendTo(htmlHeaderContainer);
     
     //Panel Body - list
-    $.each(data.regions[0].RegionItems[0].TenantItems[0].AccountNotifications, function () {
+    $.each(data.items[0].RegionItems[0].TenantItems[0].AccountNotifications, function () {
         var htmlItem;
 
         htmlItem = '<div class="fd-notification fd-notification--' + this.AccountNotificationState + ' fd-notification--m">';
@@ -34,7 +34,7 @@ function buildRightContainer(data) {
      //Panel Footer
      var htmlFooter, htmlFooterContainer;
 
-     htmlFooter = data.regions[0].RegionItems[0].TenantItems[0].AccountNotifications.length + " items loaded successfully.";
+     htmlFooter = data.items[0].RegionItems[0].TenantItems[0].AccountNotifications.length + " items loaded successfully.";
      htmlFooterContainer = '#rightContainer .fd-panel__footer';
      
      $(htmlFooterContainer).append(htmlFooter);
