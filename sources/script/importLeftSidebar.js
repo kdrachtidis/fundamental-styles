@@ -1,4 +1,4 @@
-function buildLeftSidebar(data) {
+function buildLeftSidebar(data, selectedRegion, selectedTenant) {
     var SelectedChildItemGroupLength = 0;
 
     for (i = 0; i < data.items.length; i++) {
@@ -8,8 +8,8 @@ function buildLeftSidebar(data) {
     //Panel Head
     var htmlHeader, htmlHeaderContainer;
     
-    htmlHeader = '<h3 class="fd-panel__title">' + data.items[0].RegionItems[0].TenantObjectType + '</h3>';
-    htmlHeader += '<p class="fd-panel__description">All ' + SelectedChildItemGroupLength + ' ' + data.items[0].RegionItems[0].TenantObjectType + 's</p>';
+    htmlHeader = '<h3 class="fd-panel__title">' + data.items[selectedRegion].RegionItems[selectedTenant].TenantObjectType + '</h3>';
+    htmlHeader += '<p class="fd-panel__description">All ' + SelectedChildItemGroupLength + ' ' + data.items[selectedRegion].RegionItems[selectedTenant].TenantObjectType + 's</p>';
     htmlHeaderContainer = '#leftSidebar .fd-panel__head';
     
     $(htmlHeader).appendTo(htmlHeaderContainer);
@@ -38,7 +38,7 @@ function buildLeftSidebar(data) {
     //Panel Body - List footer
     var htmlFooter, htmlFooterContainer;
 
-    htmlFooter = '<li class="fd-list__footer">' + data.items.length + ' ' + data.items[0].RegionObjectType + 's with ' + SelectedChildItemGroupLength + ' ' + data.items[0].RegionItems[0].TenantObjectType + 's loaded.</li>';
+    htmlFooter = '<li class="fd-list__footer">' + data.items.length + ' ' + data.items[selectedRegion].RegionObjectType + 's with ' + SelectedChildItemGroupLength + ' ' + data.items[selectedRegion].RegionItems[selectedTenant].TenantObjectType + 's loaded.</li>';
     htmlFooterContainer = '#leftSidebar .fd-list';
 
     $(htmlFooterContainer).append(htmlFooter);

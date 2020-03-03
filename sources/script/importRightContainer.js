@@ -1,15 +1,15 @@
-function buildRightContainer(data) {
+function buildRightContainer(data, selectedRegion, selectedTenant, selectedAccount) {
     //Panel Head
     var htmlHeader, htmlHeaderContainer;
 
-    htmlHeader = '<h3 class="fd-panel__title">' + data.items[0].RegionItems[0].TenantItems[0].AccountNotifications[0].AccountNotificationType + 's</h3>';
-    htmlHeader += '<p class="fd-panel__description">' + data.items[0].RegionItems[0].TenantItems[0].AccountName + ' [' + data.items[0].RegionItems[0].TenantItems[0].AccountId + ']</p>';
+    htmlHeader = '<h3 class="fd-panel__title">' + data.items[selectedRegion].RegionItems[selectedTenant].TenantItems[selectedAccount].AccountNotifications[0].AccountNotificationType + 's</h3>';
+    htmlHeader += '<p class="fd-panel__description">' + data.items[selectedRegion].RegionItems[selectedTenant].TenantItems[selectedAccount].AccountName + ' [' + data.items[selectedRegion].RegionItems[selectedTenant].TenantItems[selectedAccount].AccountId + ']</p>';
     htmlHeaderContainer = '#rightContainer .fd-panel__head';
     
     $(htmlHeader).appendTo(htmlHeaderContainer);
     
     //Panel Body - list
-    $.each(data.items[0].RegionItems[0].TenantItems[0].AccountNotifications, function () {
+    $.each(data.items[selectedRegion].RegionItems[selectedTenant].TenantItems[selectedAccount].AccountNotifications, function () {
         var htmlItem;
 
         htmlItem = '<div class="fd-notification fd-notification--' + this.AccountNotificationState + ' fd-notification--m">';
@@ -34,8 +34,8 @@ function buildRightContainer(data) {
      //Panel Footer
      var htmlFooter, htmlFooterContainer;
 
-     htmlFooter = data.items[0].RegionItems[0].TenantItems[0].AccountNotifications.length + " items loaded successfully.";
-     htmlFooter += '&nbsp<a href="http://localhost/fundamental-styles/docs/src/html/leftContainer.min.html" class="fd-link" tabindex="0" target="_blank">View Section</a>';
+     htmlFooter = data.items[selectedRegion].RegionItems[selectedTenant].TenantItems[selectedAccount].AccountNotifications.length + " items loaded successfully.";
+     htmlFooter += '&nbsp<a href="http://localhost/fundamental-styles/docs/src/html/rightContainer.min.html" class="fd-link" tabindex="0" target="_blank">View Section</a>';
      htmlFooterContainer = '#rightContainer .fd-panel__footer';
      
      $(htmlFooterContainer).append(htmlFooter);

@@ -1,15 +1,15 @@
-function buildMainContainer(data) {
+function buildMainContainer(data, selectedRegion, selectedTenant, selectedAccount) {
     //Panel Head
     var htmlHeader, htmlHeaderContainer;
 
-    htmlHeader = '<h3 class="fd-panel__title">' + data.items[0].RegionItems[0].TenantItems[0].AccountObjectType + '</h3>';
-    htmlHeader += '<p class="fd-panel__description">' + data.items[0].RegionItems[0].TenantItems[0].AccountName + ' [' + data.items[0].RegionItems[0].TenantItems[0].AccountId + ']</p>';
+    htmlHeader = '<h3 class="fd-panel__title">' + data.items[selectedRegion].RegionItems[selectedTenant].TenantItems[selectedAccount].AccountObjectType + '</h3>';
+    htmlHeader += '<p class="fd-panel__description">' + data.items[selectedRegion].RegionItems[selectedTenant].TenantItems[selectedAccount].AccountName + ' [' + data.items[selectedRegion].RegionItems[selectedTenant].TenantItems[selectedAccount].AccountId + ']</p>';
     htmlHeaderContainer = '#mainContainer .fd-panel__head';
 
     $(htmlHeader).appendTo(htmlHeaderContainer);
 
     //Panel Body - Filters
-    $.each(data.items[0].RegionItems[0].TenantItems[0].AccountTags, function () {
+    $.each(data.items[selectedRegion].RegionItems[selectedTenant].TenantItems[selectedAccount].AccountTags, function () {
         var htmlItem, htmlItemContainer;
 
         htmlItem = '<span class="fd-badge fd-badge--pill fd-has-margin-right-tiny">' + this.AccountTagLabel + '</span>';
@@ -19,7 +19,7 @@ function buildMainContainer(data) {
     });
 
     //Panel Body - content
-    $.each(data.items[0].RegionItems[0].TenantItems[0].AccountObjects, function (i) {
+    $.each(data.items[selectedRegion].RegionItems[selectedTenant].TenantItems[selectedAccount].AccountObjects, function (i) {
         //Panel Body - Tabs
         var tabItem, tabItemContainer;
 
@@ -57,31 +57,31 @@ function buildMainContainer(data) {
         $(tableItem).appendTo(tableItemContainer);
 
         //Panel Body - Table heads
-        $.each(data.items[0].RegionItems[0].TenantItems[0].AccountObjects[i].AccountObjectLabels, function (j) {
+        $.each(data.items[selectedRegion].RegionItems[selectedTenant].TenantItems[selectedAccount].AccountObjects[i].AccountObjectLabels, function (j) {
             var thItem, thItemContainer;
 
             thItem = '<th class="fd-table__cell" scope="col">';
-            thItem +=   data.items[0].RegionItems[0].TenantItems[0].AccountObjects[i].AccountObjectLabels[j].AccountObjectItemLabel;
+            thItem +=   data.items[selectedRegion].RegionItems[selectedTenant].TenantItems[selectedAccount].AccountObjects[i].AccountObjectLabels[j].AccountObjectItemLabel;
             thItem += '</th>';
-            thItemContainer = '#mainContainer #tab' + data.items[0].RegionItems[0].TenantItems[0].AccountObjects[i].AccountObjectId + ' table thead tr';
+            thItemContainer = '#mainContainer #tab' + data.items[selectedRegion].RegionItems[selectedTenant].TenantItems[selectedAccount].AccountObjects[i].AccountObjectId + ' table thead tr';
 
             $(thItem).appendTo(thItemContainer);
         });
 
         //Panel Body - Table rows
-        $.each(data.items[0].RegionItems[0].TenantItems[0].AccountObjects[i].AccountObjectItems, function () {
+        $.each(data.items[selectedRegion].RegionItems[selectedTenant].TenantItems[selectedAccount].AccountObjects[i].AccountObjectItems, function () {
             var trItem, trItemContainer;
 
             trItem = '<tr class="fd-table__row tr-' + this.AccountObjectItemId + '">';
             trItem += '</tr>';
-            trItemContainer = '#mainContainer #tab' + data.items[0].RegionItems[0].TenantItems[0].AccountObjects[i].AccountObjectId + ' table tbody';
+            trItemContainer = '#mainContainer #tab' + data.items[selectedRegion].RegionItems[selectedTenant].TenantItems[selectedAccount].AccountObjects[i].AccountObjectId + ' table tbody';
 
             $(trItem).appendTo(trItemContainer);
         });
     });
 
     //Panel Body - Table cells (Tab 1)
-    $.each(data.items[0].RegionItems[0].TenantItems[0].AccountObjects[0].AccountObjectItems, function (j) {
+    $.each(data.items[selectedRegion].RegionItems[selectedTenant].TenantItems[selectedAccount].AccountObjects[0].AccountObjectItems, function (j) {
         var tdItem, tdItemContainer;
 
         tdItem = ' <td class="fd-table__cell">';
@@ -93,13 +93,13 @@ function buildMainContainer(data) {
         tdItem += ' <td class="fd-table__cell">' + this.AccountObjectItemAddress + '</td>';
         tdItem += ' <td class="fd-table__cell">' + this.AccountObjectItemAuthor + '</td>';
         tdItem += ' <td class="fd-table__cell">' + this.AccountObjectItemDate + '</td>';
-        tdItemContainer = '#mainContainer #tab' + data.items[0].RegionItems[0].TenantItems[0].AccountObjects[0].AccountObjectId + ' .tr-' + this.AccountObjectItemId;
+        tdItemContainer = '#mainContainer #tab' + data.items[selectedRegion].RegionItems[selectedTenant].TenantItems[selectedAccount].AccountObjects[0].AccountObjectId + ' .tr-' + this.AccountObjectItemId;
         
         $(tdItem).appendTo(tdItemContainer);
     });
 
     //Panel Body - Table cells (Tab 2)
-    $.each(data.items[0].RegionItems[0].TenantItems[0].AccountObjects[1].AccountObjectItems, function () {
+    $.each(data.items[selectedRegion].RegionItems[selectedTenant].TenantItems[selectedAccount].AccountObjects[1].AccountObjectItems, function () {
         var tdItem, tdItemContainer;
 
         tdItem = ' <td class="fd-table__cell">';
@@ -110,13 +110,13 @@ function buildMainContainer(data) {
         tdItem += ' <td class="fd-table__cell">' + this.AccountObjectItemType + '</td>';
         tdItem += ' <td class="fd-table__cell">' + this.AccountObjectItemAuthor + '</td>';
         tdItem += ' <td class="fd-table__cell">' + this.AccountObjectItemDate + '</td>';
-        tdItemContainer = '#mainContainer #tab' + data.items[0].RegionItems[0].TenantItems[0].AccountObjects[1].AccountObjectId + ' .tr-' + this.AccountObjectItemId;
+        tdItemContainer = '#mainContainer #tab' + data.items[selectedRegion].RegionItems[selectedTenant].TenantItems[selectedAccount].AccountObjects[1].AccountObjectId + ' .tr-' + this.AccountObjectItemId;
 
         $(tdItem).appendTo(tdItemContainer);
     });
 
     //Panel Body - Table cells (Tab 3)
-    $.each(data.items[0].RegionItems[0].TenantItems[0].AccountObjects[2].AccountObjectItems, function () {
+    $.each(data.items[selectedRegion].RegionItems[selectedTenant].TenantItems[selectedAccount].AccountObjects[2].AccountObjectItems, function () {
         var tdItem, tdItemContainer;
 
         tdItem = ' <td class="fd-table__cell">';
@@ -127,7 +127,7 @@ function buildMainContainer(data) {
         tdItem += ' <td class="fd-table__cell">' + this.AccountObjectItemType + '</td>';
         tdItem += ' <td class="fd-table__cell">' + this.AccountObjectItemAuthor + '</td>';
         tdItem += ' <td class="fd-table__cell">' + this.AccountObjectItemDate + '</td>';
-        tdItemContainer = '#mainContainer #tab' + data.items[0].RegionItems[0].TenantItems[0].AccountObjects[2].AccountObjectId + ' .tr-' + this.AccountObjectItemId;
+        tdItemContainer = '#mainContainer #tab' + data.items[selectedRegion].RegionItems[selectedTenant].TenantItems[selectedAccount].AccountObjects[2].AccountObjectId + ' .tr-' + this.AccountObjectItemId;
 
         $(tdItem).appendTo(tdItemContainer);
     });

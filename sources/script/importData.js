@@ -13,9 +13,9 @@ function getData(customPath) {
 }
 
 function buildContainers(data){
-    buildLeftSidebar(data);
-    buildLeftContainer(data);
-    buildMainContainer(data);
-    buildRightContainer(data);
-    buildRightSidebar(data);
+    buildLeftSidebar(data, 0, 0);
+    buildLeftContainer(data, 0, 0, 0);
+    buildMainContainer(data, 0, 0, 0);
+    buildRightContainer(data, 0, 0, 0);
+    buildRightSidebar(data, 0, 0, 0);
 }
