@@ -4,10 +4,10 @@ function getData(customPath) {
         url: customPath + '/src/json/ContentData.min.json',
         success: buildContainers,
         error: function () {
-            console.log('No left sidebar JSON found.');
+            console.log('No JSON found.');
         },
         complete: function () {
-            console.log('Left sidebar JSON loaded.');
+            console.log('JSON loaded.');
         }
     });
 }

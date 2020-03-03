@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>pageContainer</title>
+    <meta charset="UTF-8" />
+
+    <link rel="stylesheet" type="text/css"
+        href="https://unpkg.com/fundamental-styles@0.5.0/dist/fundamental-styles.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="../../src/js/script.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.when(getPageSections('../../')).done(function () {
+                getData('../..');
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class="fd-page" id="pageContainer">
+
+        <div class="fd-page__header fd-has-padding-small">
+            <ul class="fd-breadcrumb">
+                <li class="fd-breadcrumb__item"><a class="fd-breadcrumb__link" tabindex="0" href="#">Home</a></li>
+                <li class="fd-breadcrumb__item"><a class="fd-breadcrumb__link" tabindex="0" href="#">My
+                        Organization</a></li>
+                <li class="fd-breadcrumb__item">My Tenants</li>
+            </ul>
+        </div>
+
+        <div class="fd-page__content">
+
+            <!-- Section -->
+            <section class="fd-section">
+                <div class="fd-section__header">
+                    <h3 class="fd-section__title">Section title</h3>
+                </div>
+                <div class="fd-container fd-container--fluid">
+                    <div id="leftSidebar-shell" class="fd-col--2">
+                    </div>
+
+                    <div id="leftContainer-shell" class="fd-col--2">
+                    </div>
+
+                    <div id="mainContainer-shell" class="fd-col--3">
+                    </div>
+
+                    <div id="rightContainer-shell" class="fd-col--3">
+                    </div>
+
+                    <div id="rightSidebar-shell" class="fd-col--2">
+                    </div>
+                </div>
+            </section>
+            <!-- End Section -->
+
+        </div>
+    </div>
+
+</body>
+
+</html>

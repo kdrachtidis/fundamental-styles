@@ -12,6 +12,7 @@ module.exports = function (grunt) {
         htmlmin: {
             dist: {
                 files: {
+                    'docs/src/html/pageContainer.min.html': 'sources/structure/pageContainer.html',
                     'docs/src/html/shellBar.min.html': 'sources/structure/shellBar.html',
                     'docs/src/html/leftContainer.min.html': 'sources/structure/leftContainer.html',
                     'docs/src/html/leftSidebar.min.html': 'sources/structure/leftSidebar.html',
@@ -25,7 +26,7 @@ module.exports = function (grunt) {
             all: ['sources/**/*.html']
         },
         jshint: {
-            files: ['Gruntfile.js', '*.json', 'sources/**/*.js'],
+            files: ['*.js', '*.json', 'sources/**/*.js'],
             options: {
                 browser: true
             }

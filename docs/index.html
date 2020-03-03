@@ -17,13 +17,8 @@
     <script src="src/js/script.min.js"></script>
     <script>
         $(document).ready(function () {
-            $.when(getStructure()).done(function () {
-                //getLeftSidebarData('.');
-                //getLeftContainerData('.');
-                //getMainContainerData('.');
+            $.when(getAllSections('./')).done(function () {                
                 getData('.');
-                //getRightContainerData('.');
-                //getRightSidebarData('.');
             });
         });
     </script>
@@ -38,52 +33,7 @@
 
         <div class="fd-shell__app">
             <div class="fd-app">
-                <div class="fd-app__main">
-
-                    <!-- Page -->
-                    <div class="fd-page">
-                        <div class="fd-page__header fd-has-padding-small">
-                            <ul class="fd-breadcrumb">
-                                <li class="fd-breadcrumb__item"><a class="fd-breadcrumb__link" tabindex="0"
-                                        href="#">Home</a></li>
-                                <li class="fd-breadcrumb__item"><a class="fd-breadcrumb__link" tabindex="0" href="#">My
-                                        Organization</a></li>
-                                <li class="fd-breadcrumb__item">My Tenants</li>
-                            </ul>
-                        </div>
-
-                        <div class="fd-page__content">
-
-                            <!-- Section -->
-                            <section class="fd-section">
-                                <div class="fd-section__header">
-                                    <h3 class="fd-section__title">Section title</h3>
-                                </div>
-                                <div class="fd-container fd-container--fluid">
-                                    <div id="leftSidebar-shell" class="fd-col--2">
-                                    </div>
-
-                                    <div id="leftContainer-shell" class="fd-col--2">
-                                    </div>
-
-                                    <div id="mainContainer-shell" class="fd-col--3">
-                                    </div>
-
-                                    <div id="rightContainer-shell" class="fd-col--3">
-                                    </div>
-
-                                    <div id="rightSidebar-shell" class="fd-col--2">
-                                    </div>
-                                </div>
-                            </section>
-                            <!-- End Section -->
-
-
-                        </div>
-                    </div>
-                    <!-- End Page -->
-
-                </div>
+                <div class="fd-app__main" id="pageContainer-shell"></div>
             </div>
         </div>
 
