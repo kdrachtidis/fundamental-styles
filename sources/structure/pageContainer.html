@@ -13,7 +13,7 @@
     <script src="../../src/js/script.min.js"></script>
     <script>
         $(document).ready(function () {
-            $.when(getPageSections('../../')).done(function () {
+            $.when(loadPageSections('../../')).done(function () {
                 getData('../..');
             });
         });

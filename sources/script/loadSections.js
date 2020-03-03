@@ -1,14 +1,14 @@
-function getAllSections(customPath) {
+function loadAllSections(customPath) {
     $('#shellBar-shell').load(customPath + 'src/html/shellBar.min.html #shellBar', function () {
         console.log('Shell bar loaded.');
     });
     $('#pageContainer-shell').load(customPath + 'src/html/pageContainer.min.html #pageContainer', function () {
-        getPageSections(customPath);
         console.log('Page container loaded.');
+        loadPageSections(customPath);
     });
 }
 
-function getPageSections(customPath) {
+function loadPageSections(customPath) {
     $('#leftSidebar-shell').load(customPath + 'src/html/leftSidebar.min.html #leftSidebar', function () {
         console.log('Left sidebar loaded.');
     });
