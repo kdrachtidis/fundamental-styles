@@ -1,36 +1,36 @@
-function loadAllSections(customPath) {
-    $('#shellBar-shell').load(customPath + 'src/html/shellBar.min.html #shellBar', function () {
-        console.log('Shell bar loaded.');
+function loadShell(customPath) {
+    $('.fd-shell__header').load(customPath + 'src/html/shellBar.min.html .fd-shellbar', function () {
+        console.log('Shell header loaded.');
     });
-    $('#footerBar-shell').load(customPath + 'src/html/footerBar.min.html #footerBar', function () {
-        console.log('Footer bar loaded.');
+    $('.fd-app__main').load(customPath + 'src/html/pageContainer.min.html .fd-page', function () {
+        console.log('App loaded.');
+        loadSection(customPath);
     });
-    $('#pageContainer-shell').load(customPath + 'src/html/pageContainer.min.html #pageContainer', function () {
-        console.log('Page container loaded.');
-        loadPanels(customPath);
+    $('.fd-shell__footer').load(customPath + 'src/html/footerBar.min.html .fd-bar', function () {
+        console.log('Footer loaded.');
     });
 }
 
 function loadPanels(customPath) {
-    $('#leftSidebar-shell').load(customPath + 'src/html/leftSidebar.min.html #leftSidebar', function () {
+    $('#leftSidebar-shell').load(customPath + 'src/html/leftSidebar.min.html .fd-panel', function () {
         console.log('Left sidebar loaded.');
     });
-    $('#leftContainer-shell').load(customPath + 'src/html/leftContainer.min.html #leftContainer', function () {
+    $('#leftContainer-shell').load(customPath + 'src/html/leftContainer.min.html .fd-panel', function () {
         console.log('Left container loaded.');
     });
-    $('#mainContainer-shell').load(customPath + 'src/html/mainContainer.min.html #mainContainer', function () {
+    $('#mainContainer-shell').load(customPath + 'src/html/mainContainer.min.html .fd-panel', function () {
         console.log('Main container loaded.');
     });
-    $('#rightContainer-shell').load(customPath + 'src/html/rightContainer.min.html #rightContainer', function () {
+    $('#rightContainer-shell').load(customPath + 'src/html/rightContainer.min.html .fd-panel', function () {
         console.log('Right container loaded.');
     });
-    $('#rightSidebar-shell').load(customPath + 'src/html/rightSidebar.min.html #rightSidebar', function () {
+    $('#rightSidebar-shell').load(customPath + 'src/html/rightSidebar.min.html .fd-panel', function () {
         console.log('Right sidebar loaded.');
     });
 }
 
-function loadColumns(customPath) {
-    $('#sectionContainer-shell').load(customPath + 'src/html/sectionColumns.min.html #sectionContainer', function () {
+function loadSection(customPath) {
+    $('.fd-page__content').load(customPath + 'src/html/sectionColumns.min.html .fd-section', function () {
         console.log('Section container loaded.');
         loadPanels(customPath);
     });

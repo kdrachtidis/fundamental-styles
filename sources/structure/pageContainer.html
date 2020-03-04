@@ -13,7 +13,7 @@
     <script src="../../src/js/script.min.js"></script>
     <script>
         $(document).ready(function () {
-            $.when(loadColumns('../../')).done(function () {
+            $.when(loadSection('../../')).done(function () {
                 getData('../..');
             });
         });
@@ -40,17 +40,17 @@
             <div class="fd-bar__middle">
                 <div class="fd-bar__element fd-bar__element--full-width">
                     <ul class="fd-breadcrumb">
-                        <li class="fd-breadcrumb__item"><a class="fd-breadcrumb__link" tabindex="0" href="#">Home</a></li>
-                        <li class="fd-breadcrumb__item"><a class="fd-breadcrumb__link" tabindex="0" href="#">My Organization</a></li>
+                        <li class="fd-breadcrumb__item"><a class="fd-breadcrumb__link" tabindex="0" href="#">Home</a>
+                        </li>
+                        <li class="fd-breadcrumb__item"><a class="fd-breadcrumb__link" tabindex="0" href="#">My
+                                Organization</a></li>
                         <li class="fd-breadcrumb__item">My Tenants</li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <div class="fd-page__content" id="sectionContainer-shell">
-
-        </div>
+        <div class="fd-page__content"></div>
     </main>
 
 </body>

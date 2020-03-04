@@ -17,7 +17,7 @@
     <script src="src/js/script.min.js"></script>
     <script>
         $(document).ready(function () {
-            $.when(loadAllSections('./')).done(function () {
+            $.when(loadShell('./')).done(function () {
                 getData('.');
             });
         });
@@ -28,16 +28,16 @@
 
     <!-- Application Shell -->
     <div class="fd-shell">
-        <div class="fd-shell__header fd-shell__header--fixed" id="shellBar-shell">
+        <div class="fd-shell__header fd-shell__header--fixed">
         </div>
 
         <div class="fd-shell__app">
             <div class="fd-app">
-                <div class="fd-app__main" id="pageContainer-shell"></div>
+                <div class="fd-app__main"></div>
             </div>
         </div>
 
-        <div class="fd-shell__footer fd-shell__footer--fixed" id="footerBar-shell">
+        <div class="fd-shell__footer fd-shell__footer--fixed">
         </div>
     </div>
     <!-- End Application Shell -->
