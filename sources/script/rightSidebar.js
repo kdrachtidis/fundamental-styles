@@ -23,7 +23,7 @@ function buildRightSidebar() {
         htmlItem += '   <div class="fd-tile__actions">';
         htmlItem += '       <div class="fd-popover fd-popover--right">';
         htmlItem += '           <div class="fd-popover__control">';
-        htmlItem += '               <button class="fd-button--light sap-icon--overflow" aria-label="More" aria-expanded="false" aria-controls="WQIDD179" aria-haspopup="true" id="WQIDD179"></button>';
+        htmlItem += '               <button class="fd-button fd-button--transparent sap-icon--overflow" aria-label="More" aria-expanded="false" aria-controls="WQIDD179" aria-haspopup="true" id="WQIDD179"></button>';
         htmlItem += '           </div>';
         htmlItem += '           <div class="fd-popover__body fd-popover__body--right fd-popover__body--no-arrow" aria-hidden="true" id="WQIDD179">';
         htmlItem += '               <nav class="fd-menu">';

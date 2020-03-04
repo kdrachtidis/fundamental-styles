@@ -13,12 +13,14 @@ module.exports = function (grunt) {
             dist: {
                 files: {
                     'docs/src/html/pageContainer.min.html': 'sources/structure/pageContainer.html',
+                    'docs/src/html/sectionColumns.min.html': 'sources/structure/sectionColumns.html',
                     'docs/src/html/shellBar.min.html': 'sources/structure/shellBar.html',
-                    'docs/src/html/leftContainer.min.html': 'sources/structure/leftContainer.html',
-                    'docs/src/html/leftSidebar.min.html': 'sources/structure/leftSidebar.html',
-                    'docs/src/html/mainContainer.min.html': 'sources/structure/mainContainer.html',
-                    'docs/src/html/rightContainer.min.html': 'sources/structure/rightContainer.html',
-                    'docs/src/html/rightSidebar.min.html': 'sources/structure/rightSidebar.html'
+                    'docs/src/html/footerBar.min.html': 'sources/structure/footerBar.html',
+                    'docs/src/html/leftContainer.min.html': 'sources/structure/panels/leftContainer.html',
+                    'docs/src/html/leftSidebar.min.html': 'sources/structure/panels/leftSidebar.html',
+                    'docs/src/html/mainContainer.min.html': 'sources/structure/panels/mainContainer.html',
+                    'docs/src/html/rightContainer.min.html': 'sources/structure/panels/rightContainer.html',
+                    'docs/src/html/rightSidebar.min.html': 'sources/structure/panels/rightSidebar.html'
                 }
             }
         },

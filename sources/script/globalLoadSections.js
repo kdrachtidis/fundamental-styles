@@ -2,13 +2,16 @@ function loadAllSections(customPath) {
     $('#shellBar-shell').load(customPath + 'src/html/shellBar.min.html #shellBar', function () {
         console.log('Shell bar loaded.');
     });
+    $('#footerBar-shell').load(customPath + 'src/html/footerBar.min.html #footerBar', function () {
+        console.log('Footer bar loaded.');
+    });
     $('#pageContainer-shell').load(customPath + 'src/html/pageContainer.min.html #pageContainer', function () {
         console.log('Page container loaded.');
-        loadPageSections(customPath);
+        loadPanels(customPath);
     });
 }
 
-function loadPageSections(customPath) {
+function loadPanels(customPath) {
     $('#leftSidebar-shell').load(customPath + 'src/html/leftSidebar.min.html #leftSidebar', function () {
         console.log('Left sidebar loaded.');
     });
@@ -23,5 +26,12 @@ function loadPageSections(customPath) {
     });
     $('#rightSidebar-shell').load(customPath + 'src/html/rightSidebar.min.html #rightSidebar', function () {
         console.log('Right sidebar loaded.');
+    });
+}
+
+function loadColumns(customPath) {
+    $('#sectionContainer-shell').load(customPath + 'src/html/sectionColumns.min.html #sectionContainer', function () {
+        console.log('Section container loaded.');
+        loadPanels(customPath);
     });
 }

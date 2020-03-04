@@ -16,7 +16,7 @@ function buildRightContainer() {
         htmlItem += '   <div class="fd-notification__header">';
         htmlItem += '       <div class="fd-notification__indicator--' + this.AccountNotificationState + '"></div>';
         htmlItem += '       <div class="fd-notification__title">' + this.AccountNotificationTitle + '</div>';
-        htmlItem += '       <button class="fd-button--light sap-icon--decline fd-notification__close"></button>';
+        htmlItem += '       <button class="fd-button fd-button--transparent sap-icon--decline fd-notification__close"></button>';
         htmlItem += '   </div>';
         htmlItem += '   <div class="fd-notification__body">';
         htmlItem += '       <div class="fd-notification__content">';
