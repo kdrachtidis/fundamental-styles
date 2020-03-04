@@ -1,18 +1,18 @@
-function buildLeftContainer(data, selectedRegion, selectedTenant, selectedAccount) {
+function buildLeftContainer() {
     //Panel Head
     var htmlHeader, htmlHeaderContainer;
     
-    htmlHeader = '<h3 class="fd-panel__title">' + data.items[selectedRegion].RegionItems[selectedTenant].TenantItems[selectedAccount].AccountObjectType + 's</h3>';
-    htmlHeader += '<p class="fd-panel__description">' + data.items[selectedRegion].RegionItems[selectedTenant].TenantName + ' [' + data.items[selectedRegion].RegionItems[selectedTenant].TenantId + ']</p>';
+    htmlHeader = '<h3 class="fd-panel__title">' + currentAccountObjectType + 's</h3>';
+    htmlHeader += '<p class="fd-panel__description">' + currentTenantName + ' [' + currentTenantId + ']</p>';
     htmlHeaderContainer = '#leftContainer .fd-panel__head';
 
     $(htmlHeader).appendTo(htmlHeaderContainer);
 
     //Panel Body - List
-    $.each(data.items[selectedRegion].RegionItems[selectedTenant].TenantItems, function () {
+    $.each(currentTenantItems, function () {
         var htmlItem, htmlItemContainer;
 
-        htmlItem = '<li class="fd-list__item">';
+        htmlItem = '<li class="fd-list__item" id="' + this.AccountId + '" onclick="selectAccount(this.id)">';
         htmlItem += '   <span class="fd-list__title">' + this.AccountName + '</span>';
         htmlItem += '   <span class="fd-list__secondary fd-has-color-status-' + this.AccountStatusColor + '">' + this.AccountStatus + '</span>';
         htmlItem += '</li>';
@@ -25,7 +25,7 @@ function buildLeftContainer(data, selectedRegion, selectedTenant, selectedAccoun
     var htmlFooter, htmlFooterContainer;
     
     htmlFooter = '<li class="fd-list__footer">';
-    htmlFooter +=   data.items[selectedRegion].RegionItems[selectedTenant].TenantItems.length + '&nbsp;' + data.items[selectedRegion].RegionItems[selectedTenant].TenantItems[selectedAccount].AccountObjectType + 's loaded successfully.';
+    htmlFooter +=   currentTenantItemsLength + '&nbsp;' + currentAccountObjectType + 's loaded successfully.';
     htmlFooter += '</li>';
     htmlFooterContainer = '#leftContainer .fd-list';
 

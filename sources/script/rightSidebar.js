@@ -1,15 +1,15 @@
-function buildRightSidebar(data, selectedRegion, selectedTenant, selectedAccount) {
+function buildRightSidebar() {
     //Panel Head
     var htmlHeader, htmlHeaderContainer;
 
-    htmlHeader = '<h3 class="fd-panel__title">' + data.items[selectedRegion].RegionItems[selectedTenant].TenantItems[selectedAccount].AccountResources[0].AccountResourceType + 's</h3>';
-    htmlHeader += '<p class="fd-panel__description">' + data.items[selectedRegion].RegionItems[selectedTenant].TenantItems[selectedAccount].AccountName + ' [' + data.items[selectedRegion].RegionItems[selectedTenant].TenantItems[selectedAccount].AccountId + ']</p>';
+    htmlHeader = '<h3 class="fd-panel__title">' + currentAccountResourceType + 's</h3>';
+    htmlHeader += '<p class="fd-panel__description">' + currentAccountName + ' [' + currentAccountId + ']</p>';
     htmlHeaderContainer = '#rightSidebar .fd-panel__head';
 
     $(htmlHeader).appendTo(htmlHeaderContainer);
 
     //Panel Body - List
-    $.each(data.items[selectedRegion].RegionItems[selectedTenant].TenantItems[selectedAccount].AccountResources, function () {
+    $.each(currentAccountResources, function () {
         var htmlItem, htmlItemContainer;
 
         htmlItem = '<div class="fd-tile">';
@@ -45,7 +45,7 @@ function buildRightSidebar(data, selectedRegion, selectedTenant, selectedAccount
     //Panel Body - Panel footer
     var htmlFooter, htmlFooterContainer;
 
-    htmlFooter = data.items[selectedRegion].RegionItems[selectedTenant].TenantItems[selectedAccount].AccountResources.length + ' ' + data.items[selectedRegion].RegionItems[selectedTenant].TenantItems[selectedAccount].AccountResources[0].AccountResourceType + 's available.';
+    htmlFooter = currentAccountResourcesLength + ' ' + currentAccountResourceType + 's available.';
     htmlFooter += '&nbsp<a href="http://localhost/fundamental-styles/docs/src/html/rightSidebar.min.html" class="fd-link" tabindex="0" target="_blank">View Section</a>';
     htmlFooterContainer = '#rightSidebar .fd-panel__footer';
 
