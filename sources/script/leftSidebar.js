@@ -21,7 +21,7 @@ function buildLeftSidebar(data) {
         $.each(currentRegions[i].RegionItems, function () {
             var htmlItem, htmlItemContainer;
 
-            htmlItem = '<li class="fd-list__item">';
+            htmlItem = '<li class="fd-list__item" id="' + this.TenantId + '" onclick="selectTenant(this.id)">';
             htmlItem += '   <span class="fd-list__title">' + this.TenantName + '</span>';
             htmlItem += '</li>';
             htmlItemContainer = '#leftSidebar #group-' + currentRegions[i].RegionId;
