@@ -28,7 +28,7 @@ module.exports = function (grunt) {
             all: ['sources/**/*.html']
         },
         jshint: {
-            files: ['*.js', '*.json', 'sources/**/*.js'],
+            files: ['*.js', '*.json', 'sources/**/*.js', 'sources/**/*.json'],
             options: {
                 browser: true
             }
