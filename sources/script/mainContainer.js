@@ -1,45 +1,47 @@
+var mainContainerHead = '#mainContainer .fd-panel__head';
+var mainContainerFilters = '#mainContainer .fd-panel__filters';
+var mainContainerTabs = '#mainContainer .fd-tabs';
+var mainContainerBody = '#mainContainer .fd-panel__body';
+
 function buildMainContainer(data) {
     //Panel Head
-    var htmlHeader, htmlHeaderContainer;
-
+    var htmlHeader;
     htmlHeader = '<h3 class="fd-panel__title">' + currentAccountObjectType + '</h3>';
     htmlHeader += '<p class="fd-panel__description">' + currentAccountName + ' [' + currentAccountId + ']</p>';
-    htmlHeaderContainer = '#mainContainer .fd-panel__head';
 
-    $(htmlHeader).appendTo(htmlHeaderContainer);
+    $(htmlHeader).appendTo(mainContainerHead);
 
     //Panel Body - Filters
     $.each(currentAccountTags, function () {
-        var htmlItem, htmlItemContainer;
-
+        var htmlItem;
         htmlItem = '<span class="fd-badge fd-badge--pill fd-has-margin-right-tiny">' + this.AccountTagLabel + '</span>';
-        htmlItemContainer = '#mainContainer .fd-panel__filters';
 
-        $(htmlItem).appendTo(htmlItemContainer);
+        $(htmlItem).appendTo(mainContainerFilters);
     });
+
+    //Panel Body - Tab container
+    var htmlTabs;
+    htmlTabs = '<ul class="fd-tabs fd-tabs--s fd-tabs--compact" role="tablist"></ul>';
+    $(htmlTabs).appendTo(mainContainerBody);
 
     //Panel Body - content
     $.each(currentAccountObjects, function (i) {
         //Panel Body - Tabs
-        var tabItem, tabItemContainer;
-
+        var tabItem;
         tabItem = '<li class="fd-tabs__item">';
         tabItem += '   <a class="fd-tabs__link link-' + this.AccountObjectId + '" aria-controls="tab' + this.AccountObjectId + '" aria-selected=' + this.AccountObjectTypeExpanded + ' href="#tab' + this.AccountObjectId + '" role="tab" onclick="clickTab' + this.AccountObjectId + '()">';
         tabItem += '       <p class="fd-tabs__count">' + this.AccountObjectItems.length + '</p>';
         tabItem += '       <span class="fd-tabs__tag">' + this.AccountObjectType + '</span>';
         tabItem += '   </a>';
         tabItem += '</li>';
-        tabItemContainer = '.fd-tabs';
 
-        $(tabItem).appendTo(tabItemContainer);
+        $(tabItem).appendTo(mainContainerTabs);
 
-        var panelItem, panelItemContainer;
-
+        var panelItem;
         panelItem = '<div class="fd-tabs__panel" aria-expanded="' + this.AccountObjectTypeExpanded + '" id="tab' + this.AccountObjectId + '" role="tabpanel">';
         panelItem += '</div>';
-        panelItemContainer = '#mainContainer .fd-panel__body';
 
-        $(panelItem).appendTo(panelItemContainer);
+        $(panelItem).appendTo(mainContainerBody);
 
         //Panel Body - Tables
         var tableItem, tableItemContainer;
@@ -131,4 +133,10 @@ function buildMainContainer(data) {
 
         $(tdItem).appendTo(tdItemContainer);
     });
+}
+
+function emptyMainContainer() {
+    $(mainContainerHead).empty();
+    $(mainContainerFilters).empty();
+    $(mainContainerBody).empty();
 }

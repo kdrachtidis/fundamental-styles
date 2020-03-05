@@ -1,17 +1,3 @@
-function getData(customPath) {
-    $.ajax({
-        dataType: "json",
-        url: customPath + '/src/json/ContentData.min.json',
-        success: buildContainers,
-        error: function () {
-            console.log('No JSON found.');
-        },
-        complete: function () {
-            console.log('JSON loaded.');
-        }
-    });
-}
-
 function buildContainers(data){
     $.when(mapData(data)).done(function(){
         buildLeftSidebar();
@@ -23,8 +9,13 @@ function buildContainers(data){
 }
 
 function selectAccount(currentId) {
-    var selectedAccountNo = currentId.substring(currentId.length - 2, currentId.length) - 1;
-    globalSelectedAccount = selectedAccountNo;
+    globalSelectedAccount = currentId.substring(currentId.length - 2, currentId.length) - 1;
     console.log(globalSelectedAccount);
-    //buildRightSidebar();
+    getAccountData();
+}
+
+function selectTenant(currentId) {
+    globalSelectedTenant = currentId.substring(currentId.length - 2, currentId.length) - 1;
+    console.log(globalSelectedTenant);
+    getTenantData();
 }

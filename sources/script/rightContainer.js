@@ -1,12 +1,13 @@
+var rightContainerHead = '#rightContainer .fd-panel__head';
+var rightContainerBody = '#rightContainer .fd-panel__body';
+
 function buildRightContainer() {
     //Panel Head
-    var htmlHeader, htmlHeaderContainer;
-
-    htmlHeader = '<h3 class="fd-panel__title">' + currentAccountNotificationType + 's</h3>';
+    var htmlHeader;
+    htmlHeader = '<h3 class="fd-panel__title">' + currentAccountNotificationType + 's <span class="fd-counter" aria-label="Unread count">' + currentAccountNotificationsLength + '</span></h3>';
     htmlHeader += '<p class="fd-panel__description">' + currentAccountName + ' [' + currentAccountId + ']</p>';
-    htmlHeaderContainer = '#rightContainer .fd-panel__head';
 
-    $(htmlHeader).appendTo(htmlHeaderContainer);
+    $(htmlHeader).appendTo(rightContainerHead);
 
     //Panel Body - list
     $.each(currentAccountNotifications, function () {
@@ -28,15 +29,11 @@ function buildRightContainer() {
         htmlItem += '   </div>';
         htmlItem += '</div>';
 
-        $(htmlItem).appendTo("#rightContainer .fd-panel__body");
+        $(htmlItem).appendTo(rightContainerBody);
     });
+}
 
-    //Panel Footer
-    var htmlFooter, htmlFooterContainer;
-
-    htmlFooter = currentAccountNotificationsLength + " items loaded successfully.";
-    htmlFooter += '&nbsp<a href="http://localhost/fundamental-styles/docs/src/html/rightContainer.min.html" class="fd-link" tabindex="0" target="_blank">View Section</a>';
-    htmlFooterContainer = '#rightContainer .fd-panel__footer';
-
-    $(htmlFooterContainer).append(htmlFooter);
+function emptyRightContainer() {
+    $(rightContainerHead).empty();
+    $(rightContainerBody).empty();
 }

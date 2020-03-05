@@ -1,16 +1,17 @@
+var rightSidebarHead = '#rightSidebar .fd-panel__head';
+var rightSidebarBody = '#rightSidebar .fd-panel__body';
+
 function buildRightSidebar() {
     //Panel Head
-    var htmlHeader, htmlHeaderContainer;
-
+    var htmlHeader;
     htmlHeader = '<h3 class="fd-panel__title">' + currentAccountResourceType + 's</h3>';
     htmlHeader += '<p class="fd-panel__description">' + currentAccountName + ' [' + currentAccountId + ']</p>';
-    htmlHeaderContainer = '#rightSidebar .fd-panel__head';
 
-    $(htmlHeader).appendTo(htmlHeaderContainer);
+    $(htmlHeader).appendTo(rightSidebarHead);
 
     //Panel Body - List
     $.each(currentAccountResources, function () {
-        var htmlItem, htmlItemContainer;
+        var htmlItem;
 
         htmlItem = '<div class="fd-tile">';
         htmlItem += '   <div class="fd-tile__media">';
@@ -37,17 +38,12 @@ function buildRightSidebar() {
         htmlItem += '       </div>';
         htmlItem += '   </div>';
         htmlItem += '</div>';
-        htmlItemContainer = '#rightSidebar .fd-panel__body';
 
-        $(htmlItem).appendTo(htmlItemContainer);
+        $(htmlItem).appendTo(rightSidebarBody);
     });
+}
 
-    //Panel Body - Panel footer
-    var htmlFooter, htmlFooterContainer;
-
-    htmlFooter = currentAccountResourcesLength + ' ' + currentAccountResourceType + 's available.';
-    htmlFooter += '&nbsp<a href="http://localhost/fundamental-styles/docs/src/html/rightSidebar.min.html" class="fd-link" tabindex="0" target="_blank">View Section</a>';
-    htmlFooterContainer = '#rightSidebar .fd-panel__footer';
-
-    $(htmlFooterContainer).append(htmlFooter);
+function emptyRightSidebar() {
+    $(rightSidebarHead).empty();
+    $(rightSidebarBody).empty();
 }
