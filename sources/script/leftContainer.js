@@ -13,13 +13,16 @@ function buildLeftContainer() {
     $.each(currentTenantItems, function () {
         var htmlItem;
 
-        htmlItem = '<li class="fd-list__item" id="' + this.AccountId + '" onclick="selectAccount(this.id)">';
+        htmlItem = '<li class="fd-list__item" aria-selected="false" id="' + this.AccountId + '" onclick="selectAccount(this.id)">';
         htmlItem += '   <span class="fd-list__title">' + this.AccountName + '</span>';
         htmlItem += '   <span class="fd-list__secondary fd-has-color-status-' + this.AccountStatusColor + '">' + this.AccountStatus + '</span>';
         htmlItem += '</li>';
 
         $(htmlItem).appendTo(leftContainerList);
     });
+
+    //First item set to selected
+    $('#' + currentTenantItemsFirst.AccountId).attr('aria-selected','true');
 
     //Panel Body - List footer
     var htmlFooter;

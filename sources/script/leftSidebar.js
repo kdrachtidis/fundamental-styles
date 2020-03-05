@@ -30,6 +30,9 @@ function buildLeftSidebar(data) {
         });
     });
 
+    //First item set to selected
+    $('#' + currentRegionItemsFirst.TenantId).attr('aria-selected','true');
+
     //Panel Body - List footer
     var htmlFooter, htmlFooterContainer;
 

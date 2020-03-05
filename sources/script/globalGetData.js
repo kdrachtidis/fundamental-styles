@@ -1,8 +1,8 @@
-function getData(customPath) {
+function getInitialData(customPath) {
     $.ajax({
         dataType: "json",
         url: customPath + '/src/json/ContentData.min.json',
-        success: buildContainers,
+        success: buildInitial,
         error: function () {
             console.log('No JSON found.');
         },
@@ -16,16 +16,7 @@ function getAccountData() {
     $.ajax({
         dataType: "json",
         url: '././src/json/ContentData.min.json',
-        success: function(data){
-            $.when(mapData(data)).done(function(){
-                emptyMainContainer();
-                buildMainContainer();
-                emptyRightContainer();
-                buildRightContainer();
-                emptyRightSidebar();
-                buildRightSidebar();
-            });
-        },
+        success: buildAccount,
         error: function () {
             console.log('No JSON found.');
         },
@@ -39,23 +30,29 @@ function getTenantData() {
     $.ajax({
         dataType: "json",
         url: '././src/json/ContentData.min.json',
-        success: function(data){
-            $.when(mapData(data)).done(function(){
-                emptyLeftContainer();
-                buildLeftContainer();
-                emptyMainContainer();
-                buildMainContainer();
-                emptyRightContainer();
-                buildRightContainer();
-                emptyRightSidebar();
-                buildRightSidebar();
-            });
-        },
+        success: buildTenant,
         error: function () {
             console.log('No JSON found.');
         },
         complete: function () {
             console.log('JSON loaded.');
         }
+    });
+}
+
+function selectAccount(currentId) {
+    globalSelectedAccount = currentId.substring(currentId.length - 2, currentId.length) - 1;
+    $('#leftContainer .fd-list__item').attr('aria-selected','false');
+    $.when(getAccountData()).done(function(){
+        $('#' + currentId).attr('aria-selected','true');
+    });
+}
+
+function selectTenant(currentId) {
+    globalSelectedTenant = currentId.substring(currentId.length - 2, currentId.length) - 1;
+    globalSelectedAccount = 0;
+    $('#leftSidebar .fd-list__item').attr('aria-selected','false');
+    $.when(getTenantData()).done(function(){
+        $('#' + currentId).attr('aria-selected','true');
     });
 }

@@ -1,4 +1,4 @@
-function buildContainers(data){
+function buildInitial(data){
     $.when(mapData(data)).done(function(){
         buildLeftSidebar();
         buildLeftContainer();
@@ -8,14 +8,26 @@ function buildContainers(data){
     });
 }
 
-function selectAccount(currentId) {
-    globalSelectedAccount = currentId.substring(currentId.length - 2, currentId.length) - 1;
-    console.log(globalSelectedAccount);
-    getAccountData();
+function buildTenant(data){
+    $.when(mapData(data)).done(function(){
+        emptyLeftContainer();
+        buildLeftContainer();
+        emptyMainContainer();
+        buildMainContainer();
+        emptyRightContainer();
+        buildRightContainer();
+        emptyRightSidebar();
+        buildRightSidebar();
+    });
 }
 
-function selectTenant(currentId) {
-    globalSelectedTenant = currentId.substring(currentId.length - 2, currentId.length) - 1;
-    console.log(globalSelectedTenant);
-    getTenantData();
+function buildAccount(data){
+    $.when(mapData(data)).done(function(){
+        emptyMainContainer();
+        buildMainContainer();
+        emptyRightContainer();
+        buildRightContainer();
+        emptyRightSidebar();
+        buildRightSidebar();
+    });
 }

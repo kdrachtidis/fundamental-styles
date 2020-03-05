@@ -49,7 +49,8 @@ function mapData(data) {
     currentRegionObjectType = data.items[globalSelectedRegion].RegionObjectType;
     currentRegionId = data.items[globalSelectedRegion].RegionId;
     //Region items
-    currentRegionItems = data.items.RegionItems;
+    currentRegionItems = data.items[globalSelectedRegion].RegionItems;
+    currentRegionItemsFirst = data.items[globalSelectedRegion].RegionItems[0];
     currentRegionItemsLength = data.items[globalSelectedRegion].RegionItems.length;
     for (i = 0; i < currentRegionsLength; i++) {
         currentRegionsItemsLengthSum += data.items[i].RegionItems.length;
@@ -61,6 +62,7 @@ function mapData(data) {
     currentTenantId = data.items[globalSelectedRegion].RegionItems[globalSelectedTenant].TenantId;
     //Tenants items
     currentTenantItems = data.items[globalSelectedRegion].RegionItems[globalSelectedTenant].TenantItems;
+    currentTenantItemsFirst = data.items[globalSelectedRegion].RegionItems[globalSelectedTenant].TenantItems[0];
     currentTenantItemsLength = data.items[globalSelectedRegion].RegionItems[globalSelectedTenant].TenantItems.length;
     
     //Accounts
