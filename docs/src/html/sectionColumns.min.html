@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Section with columns</title>
+    <title>Layout: Section / Layout: Columns</title>
     <meta charset="UTF-8">
 
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/fundamental-styles@0.7.0/dist/fundamental-styles.css">
@@ -12,8 +12,9 @@
     <script src="../../src/js/script.min.js"></script>
     <script>
         $(document).ready(function () {
-            $.when(loadPanels('../../')).done(function () {
-                getData('../..');
+            globalSourcePath = '../../';
+            $.when(loadPanels()).done(function () {
+                getInitialData();
             });
         });
     </script>

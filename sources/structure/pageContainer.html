@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>pageContainer</title>
+    <title>Layout: Page</title>
     <meta charset="UTF-8" />
 
     <link rel="stylesheet" type="text/css"
@@ -13,8 +13,9 @@
     <script src="../../src/js/script.min.js"></script>
     <script>
         $(document).ready(function () {
-            $.when(loadSection('../../')).done(function () {
-                getData('../..');
+            globalSourcePath = '../../';
+            $.when(loadSection()).done(function () {
+                getInitialData();
             });
         });
     </script>
@@ -23,6 +24,7 @@
 <body>
 
     <main class="fd-page" id="pageContainer">
+        
         <header>
             <div class="fd-bar fd-bar--page fd-bar--header-with-subheader">
                 <div class="fd-bar__left">
@@ -51,6 +53,20 @@
         </div>
 
         <div class="fd-page__content"></div>
+
+        <footer>
+            <div class="fd-bar fd-bar--page fd-bar--footer">
+                <div class="fd-bar__right">
+                    <div class="fd-bar__element">
+                        <button class="fd-button fd-button--emphasized fd-button--compact">Manage</button>
+                    </div>
+                    <div class="fd-bar__element">
+                        <button class="fd-button fd-button--transparent fd-button--compact">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
     </main>
 
 </body>

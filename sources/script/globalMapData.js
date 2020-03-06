@@ -1,5 +1,7 @@
 // Global Variables
 
+var globalSourcePath;
+
 // Counters
 var globalSelectedRegion = 0;
 var globalSelectedTenant = 0;

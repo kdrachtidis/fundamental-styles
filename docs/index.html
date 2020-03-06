@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>UX prototype for exploring patterns and interactions</title>
+    <title>Layout: Application Shell</title>
 
     <meta charset="UTF-8" />
     <meta name="author" content="kdrachtidis" />
@@ -17,8 +17,9 @@
     <script src="src/js/script.min.js"></script>
     <script>
         $(document).ready(function () {
-            $.when(loadShell('./')).done(function () {
-                getInitialData('.');
+            globalSourcePath = './';
+            $.when(loadShell()).done(function () {
+                getInitialData();
             });
         });
     </script>

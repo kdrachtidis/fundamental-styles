@@ -1,41 +1,41 @@
-function getInitialData(customPath) {
+function getInitialData() {
     $.ajax({
         dataType: "json",
-        url: customPath + '/src/json/ContentData.min.json',
+        url: globalSourcePath + '/src/json/ContentData.min.json',
         success: buildInitial,
         error: function () {
             console.log('No JSON found.');
         },
         complete: function () {
-            console.log('JSON loaded.');
+            console.log('buildInitial()');
         }
     });
 }
 
-function getAccountData() {
+function getAccountData(currentId) {
     $.ajax({
         dataType: "json",
-        url: '././src/json/ContentData.min.json',
+        url: globalSourcePath + '/src/json/ContentData.min.json',
         success: buildAccount,
         error: function () {
             console.log('No JSON found.');
         },
         complete: function () {
-            console.log('JSON loaded.');
+            console.log('getAccountData(): ' + currentId);
         }
     });
 }
 
-function getTenantData() {
+function getTenantData(currentId) {
     $.ajax({
         dataType: "json",
-        url: '././src/json/ContentData.min.json',
+        url: globalSourcePath + '/src/json/ContentData.min.json',
         success: buildTenant,
         error: function () {
             console.log('No JSON found.');
         },
         complete: function () {
-            console.log('JSON loaded.');
+            console.log('getTenantData()' + currentId);
         }
     });
 }
@@ -43,7 +43,7 @@ function getTenantData() {
 function selectAccount(currentId) {
     globalSelectedAccount = currentId.substring(currentId.length - 2, currentId.length) - 1;
     $('#leftContainer .fd-list__item').attr('aria-selected','false');
-    $.when(getAccountData()).done(function(){
+    $.when(getAccountData(currentId)).done(function(){
         $('#' + currentId).attr('aria-selected','true');
     });
 }
@@ -54,7 +54,7 @@ function selectTenant(currentId) {
     globalSelectedRegion = currentId.substring(7, 8) - 1;
     console.log(globalSelectedRegion);
     $('#leftSidebar .fd-list__item').attr('aria-selected','false');
-    $.when(getTenantData()).done(function(){
+    $.when(getTenantData(currentId)).done(function(){
         $('#' + currentId).attr('aria-selected','true');
     });
 }
