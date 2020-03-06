@@ -51,7 +51,9 @@ function mapData(data) {
     }
 }
 
-function initialiseData(data) {
+function mapData(data) {
+    console.log('mapData()');
+
     //Regions
     currentRegions = data.items;
     currentRegionsLength = data.items.length;

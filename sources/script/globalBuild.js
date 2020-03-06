@@ -1,33 +1,24 @@
-function buildInitial(data){
-    $.when(initialiseData(data)).done(function(){
-        buildLeftSidebar();
-        buildLeftContainer();
-        buildMainContainer();
-        buildRightContainer();
-        buildRightSidebar();
-    });
+function buildInitial() {
+    buildLeftSidebar();
+    buildLeftContainer();
+    buildMainContainer();
+    buildRightContainer();
+    buildRightSidebar();
+
+    return true;
 }
 
-function buildTenant(data){
-    $.when(initialiseData(data)).done(function(){
-        emptyLeftContainer();
-        buildLeftContainer();
-        emptyMainContainer();
-        buildMainContainer();
-        emptyRightContainer();
-        buildRightContainer();
-        emptyRightSidebar();
-        buildRightSidebar();
-    });
+function buildTenant() {
+    $.when(emptyLeftContainer()).done(buildLeftContainer());
+    buildAccount();
+    
+    return true;
 }
 
-function buildAccount(data){
-    $.when(initialiseData(data)).done(function(){
-        emptyMainContainer();
-        buildMainContainer();
-        emptyRightContainer();
-        buildRightContainer();
-        emptyRightSidebar();
-        buildRightSidebar();
-    });
+function buildAccount() {
+    $.when(emptyMainContainer()).done(buildMainContainer());
+    $.when(emptyRightContainer()).done(buildRightContainer());
+    $.when(emptyRightSidebar()).done(buildRightSidebar());
+ 
+    return true;
 }
