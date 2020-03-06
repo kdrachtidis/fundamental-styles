@@ -42,7 +42,16 @@ var currentAccountObjectItems, currentAccountObjectItemsLength;
 
 currentRegionsItemsLengthSum = 0;
 
+var arrayRegions = [];
+
 function mapData(data) {
+    for (i = 0; i <= currentRegionsLength; i++) {
+        //arrayRegions[i] = ;
+        //console.log();
+    }
+}
+
+function initialiseData(data) {
     //Regions
     currentRegions = data.items;
     currentRegionsLength = data.items.length;
@@ -66,14 +75,14 @@ function mapData(data) {
     currentTenantItems = data.items[globalSelectedRegion].RegionItems[globalSelectedTenant].TenantItems;
     currentTenantItemsFirst = data.items[globalSelectedRegion].RegionItems[globalSelectedTenant].TenantItems[0];
     currentTenantItemsLength = data.items[globalSelectedRegion].RegionItems[globalSelectedTenant].TenantItems.length;
-    
+
     //Accounts
     currentAccountName = data.items[globalSelectedRegion].RegionItems[globalSelectedTenant].TenantItems[globalSelectedAccount].AccountName;
     currentAccountObjectType = data.items[globalSelectedRegion].RegionItems[globalSelectedTenant].TenantItems[globalSelectedAccount].AccountObjectType;
     currentAccountStatus = data.items[globalSelectedRegion].RegionItems[globalSelectedTenant].TenantItems[globalSelectedAccount].AccountStatus;
     currentAccountStatusColor = data.items[globalSelectedRegion].RegionItems[globalSelectedTenant].TenantItems[globalSelectedAccount].AccountStatusColor;
     currentAccountId = data.items[globalSelectedRegion].RegionItems[globalSelectedTenant].TenantItems[globalSelectedAccount].AccountId;
-    
+
     //Account Tags
     currentAccountTags = data.items[globalSelectedRegion].RegionItems[globalSelectedTenant].TenantItems[globalSelectedAccount].AccountTags;
     currentAccountTagsLength = data.items[globalSelectedRegion].RegionItems[globalSelectedTenant].TenantItems[globalSelectedAccount].AccountTags.length;
@@ -87,7 +96,7 @@ function mapData(data) {
     currentAccountResourceId = data.items[globalSelectedRegion].RegionItems[globalSelectedTenant].TenantItems[globalSelectedAccount].AccountResources[globalSelectedAccountResource].AccountResourceId;
     currentAccountResourceLink = data.items[globalSelectedRegion].RegionItems[globalSelectedTenant].TenantItems[globalSelectedAccount].AccountResources[globalSelectedAccountResource].AccountResourceLink;
     currentAccountResourceIcon = data.items[globalSelectedRegion].RegionItems[globalSelectedTenant].TenantItems[globalSelectedAccount].AccountResources[globalSelectedAccountResource].AccountResourceIcon;
-    
+
     //Account Notifications
     currentAccountNotifications = data.items[globalSelectedRegion].RegionItems[globalSelectedTenant].TenantItems[globalSelectedAccount].AccountNotifications;
     currentAccountNotificationsLength = data.items[globalSelectedRegion].RegionItems[globalSelectedTenant].TenantItems[globalSelectedAccount].AccountNotifications.length;
@@ -99,7 +108,7 @@ function mapData(data) {
     currentAccountNotificationSource = data.items[globalSelectedRegion].RegionItems[globalSelectedTenant].TenantItems[globalSelectedAccount].AccountNotifications[globalSelectedAccountNotification].AccountNotificationSource;
     currentAccountNotificationDescription = data.items[globalSelectedRegion].RegionItems[globalSelectedTenant].TenantItems[globalSelectedAccount].AccountNotifications[globalSelectedAccountNotification].AccountNotificationDescription;
     currentAccountNotificationState = data.items[globalSelectedRegion].RegionItems[globalSelectedTenant].TenantItems[globalSelectedAccount].AccountNotifications[globalSelectedAccountNotification].AccountNotificationState;
-    
+
     //Account Objects
     currentAccountObjects = data.items[globalSelectedRegion].RegionItems[globalSelectedTenant].TenantItems[globalSelectedAccount].AccountObjects;
     currentAccountObjectsLength = data.items[globalSelectedRegion].RegionItems[globalSelectedTenant].TenantItems[globalSelectedAccount].AccountObjects.length;

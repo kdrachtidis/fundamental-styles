@@ -1,5 +1,5 @@
 function buildInitial(data){
-    $.when(mapData(data)).done(function(){
+    $.when(initialiseData(data)).done(function(){
         buildLeftSidebar();
         buildLeftContainer();
         buildMainContainer();
@@ -9,7 +9,7 @@ function buildInitial(data){
 }
 
 function buildTenant(data){
-    $.when(mapData(data)).done(function(){
+    $.when(initialiseData(data)).done(function(){
         emptyLeftContainer();
         buildLeftContainer();
         emptyMainContainer();
@@ -22,7 +22,7 @@ function buildTenant(data){
 }
 
 function buildAccount(data){
-    $.when(mapData(data)).done(function(){
+    $.when(initialiseData(data)).done(function(){
         emptyMainContainer();
         buildMainContainer();
         emptyRightContainer();
