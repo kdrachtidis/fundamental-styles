@@ -11,7 +11,10 @@
 
     <script src="../../src/js/script.min.js"></script>
     <script>
-        $(document).ready(getInitialData('../..'));
+        $(document).ready(function(){
+            globalSourcePath = '../..';
+            loadPrototypeSection();
+        });
     </script>
 </head>
 
