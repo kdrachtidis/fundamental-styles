@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kdrachtidis/five-column-layout.git"
+    "url": "https://github.com/kdrachtidis/fundamental-styles/archive/refs/heads/main.zip"
   },
   "author": "Konstantinos Drachtidis",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/kdrachtidis/five-column-layout/issues"
+    "url": "https://github.com/kdrachtidis/fundamental-styles/issues"
   },
-  "homepage": "https://github.com/kdrachtidis/five-column-layout#readme",
+  "homepage": "https://github.com/kdrachtidis/fundamental-styles#readme",
   "devDependencies": {
     "grunt": "^1.4.1",
     "grunt-contrib-htmlmin": "^3.1.0",
