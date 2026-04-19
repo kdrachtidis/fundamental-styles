@@ -18,14 +18,12 @@
   },
   "homepage": "https://github.com/kdrachtidis/fundamental-styles#readme",
   "devDependencies": {
-    "express": "^4.22.1",
     "grunt": "^1.5.3",
     "grunt-contrib-htmlmin": "^3.1.0",
     "grunt-contrib-jshint": "^3.2.0",
     "grunt-contrib-uglify": "^4.0.1",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-html": "^12.3.0",
-    "grunt-minjson": "^0.4.0",
-    "nodemon": "^3.1.0"
+    "grunt-minjson": "^0.4.0"
   }
 }

@@ -1,0 +1,14 @@
+name: fundamental-styles
+version: 1.0.0
+
+services:
+  frontend:
+    build:
+      context: ./docs
+      dockerfile: Dockerfile
+    ports:
+      - "82:80"
+    volumes:
+      - ./docs:/usr/share/nginx/html
+    restart: always
+    container_name: fundamental-styles-frontend
